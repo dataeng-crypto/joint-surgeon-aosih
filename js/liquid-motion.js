@@ -299,7 +299,8 @@
         y: 24,
         opacity: 0,
         duration: 0.7,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        clearProps: 'all'
       });
     });
 

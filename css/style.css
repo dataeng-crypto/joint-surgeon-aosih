@@ -63,6 +63,12 @@ body {
   position: relative;
 }
 
+body.menu-open,
+body.modal-open {
+  overflow-y: hidden !important;
+  touch-action: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -531,7 +537,8 @@ button, input, select, textarea {
   background: #FFFFFF;
   z-index: 2999;
   overflow-y: auto;
-  padding: 88px 24px 32px;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 36px;
   transform: translateX(100%);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
   visibility: hidden;
@@ -542,6 +549,104 @@ button, input, select, textarea {
   transform: translateX(0);
   visibility: visible;
   pointer-events: auto;
+}
+
+/* Trust Platforms Strip */
+.trust-strip {
+  background: #FFFFFF;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.trust-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.trust-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.trust-badges-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.trust-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-light);
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: var(--tr);
+}
+.trust-badge-pill:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 151, 167, 0.12);
+}
+.trust-badge-pill img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.trust-badge-val {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .trust-strip {
+    padding: 20px 0;
+  }
+  .trust-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .trust-badges-list {
+    gap: 10px;
+    width: 100%;
+  }
+  .trust-badge-pill {
+    padding: 6px 12px;
+    font-size: 11.5px;
+  }
+}
+
+/* Press Cards */
+.press-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--tr);
+}
+.press-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal);
+}
+.press-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+.press-card:hover img {
+  transform: scale(1.03);
 }
 
 .mnl {

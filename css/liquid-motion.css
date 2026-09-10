@@ -165,12 +165,12 @@
 }
 
 /* Interactive Card Elevate */
-.dept-card, .testi-card, .sidebar-card, .about-stat-box, .clinical-table-wrapper {
+.dept-card, .testi-card, .testi-card-lg, .sidebar-card, .about-stat-box, .clinical-table-wrapper {
   transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, box-shadow;
 }
 
-.dept-card:hover, .testi-card:hover, .about-stat-box:hover {
+.dept-card:hover, .testi-card:hover, .testi-card-lg:hover, .about-stat-box:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 20px 42px -12px rgba(0, 151, 167, 0.18);
 }
@@ -208,6 +208,19 @@
   .nb svg {
     width: 12px !important;
     height: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nlt .s {
+    display: none !important;
+  }
+  .nlt .b {
+    font-size: 12px !important;
+    max-width: 145px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 }
 
@@ -339,12 +352,19 @@
 }
 
 /* --- Absolute Visibility Lock for Testimonials & Cards --- */
-.testi-card {
+.testi-card,
+.testi-card-lg,
+.testi-showcase-grid,
+.press-grid > div,
+.video-showcase-box {
   opacity: 1 !important;
   visibility: visible !important;
   filter: none !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
 }
 
-.testi-card * {
+.testi-card *,
+.testi-card-lg * {
   opacity: 1 !important;
 }
