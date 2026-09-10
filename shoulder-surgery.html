@@ -41,8 +41,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1.4">
-  <link rel="stylesheet" href="css/liquid-motion.css?v=1.4">
+  <link rel="stylesheet" href="css/style.css?v=1.5">
+  <link rel="stylesheet" href="css/liquid-motion.css?v=1.5">
 
   <!-- JSON-LD Structured Data for Search, Local & Answer Engines (AEO) -->
   <script type="application/ld+json">
@@ -682,6 +682,162 @@
     </div>
   </div>
 </section>
+
+<!-- INTERACTIVE BEFORE & AFTER DUAL COMPARISON SLIDER (PHASE 2) -->
+<section class="ba-section" id="joint-comparison-slider">
+  <div class="container">
+    <div class="sec-hdr c">
+      <span class="tag">Clinical Transformation</span>
+      <h2 class="sh">Shoulder Cuff Repair &amp; Mobility Restoration</h2>
+      <p class="ss">
+        Drag the interactive liquid slider to inspect the tendon footprint footprint coverage and anatomical reconstruction achieved in 4K Keyhole Arthroscopy.
+      </p>
+    </div>
+
+    <!-- Condition Tabs -->
+    <div class="ba-tabs-nav">
+      <button type="button" class="ba-tab-btn active" data-tab="shoulder">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 14 4-4M3.34 17a10 10 0 1 1 17.32 0"/></svg>
+        Shoulder: Full Cuff Tear vs Double-Row Fixation
+      </button>
+      <button type="button" class="ba-tab-btn" data-tab="knee">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+        Knee: Severe Varus Bowing vs Straight Alignment
+      </button>
+    </div>
+
+    <!-- Slider Box -->
+    <div class="ba-slider-container" style="--split-pos: 50%;">
+      <!-- Layer 1: Before (Bottom) -->
+      <div class="ba-layer ba-before">
+        <img src="images/shoulder_dislocation.jpg" alt="Pre-Operative Shoulder Scan">
+        <span class="ba-badge ba-badge-before">Pre-Op: Full Rotator Cuff Tear</span>
+      </div>
+
+      <!-- Layer 2: After (Top Clip) -->
+      <div class="ba-layer ba-after">
+        <img src="images/acl_surgery_graphic.png" alt="Post-Operative Keyhole Reconstruction">
+        <span class="ba-badge ba-badge-after">Post-Op: Double-Row Keyhole Fixation</span>
+      </div>
+
+      <!-- Handle -->
+      <div class="ba-handle">
+        <button type="button" class="ba-handle-button" aria-label="Drag to compare before and after">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Alignment Stats Strip Below Slider -->
+    <div class="ba-stats-strip">
+      <div class="ba-stat-col">
+        <span class="ba-stat-col-lbl">Incision Portals</span>
+        <span class="ba-stat-col-val">3 x 4mm Keyholes (Zero Muscle Split)</span>
+      </div>
+      <div class="ba-stat-col">
+        <span class="ba-stat-col-lbl">Overhead Range</span>
+        <span class="ba-stat-col-val">165° Active Pain-Free Flexion</span>
+      </div>
+      <div class="ba-stat-col">
+        <span class="ba-stat-col-lbl">Re-Tear Rate</span>
+        <span class="ba-stat-col-val">&lt; 3% (Uniform Pressure Bridge)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE CLINICAL RECOVERY MILESTONES TIMELINE (PHASE 2) -->
+<section class="recovery-section" id="recovery-milestones">
+  <div class="container">
+    <div class="sec-hdr c">
+      <span class="tag">Accelerated Rehabilitation</span>
+      <h2 class="sh">Shoulder Arthroscopy Recovery Milestones</h2>
+      <p class="ss">
+        See the actual rehabilitation milestones achieved in Dr. Naveen Sharma’s double-row suture bridge shoulder protocol.
+      </p>
+    </div>
+
+    <div class="recovery-timeline-box">
+      <!-- Top Interactive Track -->
+      <div class="timeline-track-wrap">
+        <div class="timeline-track-bar">
+          <div class="timeline-track-progress" style="width: 0%;"></div>
+        </div>
+
+        <div class="timeline-nodes-row">
+          <button type="button" class="timeline-node-item active" aria-label="Milestone Hour 4">
+            <div class="node-dot-circle">🚶</div>
+            <div class="node-time-lbl">Hour 4</div>
+            <div class="node-sub-lbl">Day Care Discharge</div>
+          </button>
+          <button type="button" class="timeline-node-item" aria-label="Milestone Day 1">
+            <div class="node-dot-circle">🏥</div>
+            <div class="node-time-lbl">Day 1</div>
+            <div class="node-sub-lbl">Pendulum Exercises</div>
+          </button>
+          <button type="button" class="timeline-node-item" aria-label="Milestone Day 4">
+            <div class="node-dot-circle">🪜</div>
+            <div class="node-time-lbl">Day 4</div>
+            <div class="node-sub-lbl">Active Assist ROM</div>
+          </button>
+          <button type="button" class="timeline-node-item" aria-label="Milestone Week 2">
+            <div class="node-dot-circle">🚗</div>
+            <div class="node-time-lbl">Week 2</div>
+            <div class="node-sub-lbl">Sling Discarded</div>
+          </button>
+          <button type="button" class="timeline-node-item" aria-label="Milestone Month 3-6">
+            <div class="node-dot-circle">🏃</div>
+            <div class="node-time-lbl">Month 3–6</div>
+            <div class="node-sub-lbl">Full Sports Return</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Milestone Detail Display Card -->
+      <div class="milestone-detail-card">
+        <!-- SVG Radial Mobility Gauge -->
+        <div class="milestone-gauge-wrap">
+          <svg class="radial-gauge-svg" viewBox="0 0 140 140">
+            <defs>
+              <linearGradient id="liquidGaugeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0097A7"/>
+                <stop offset="100%" stop-color="#4DD0E1"/>
+              </linearGradient>
+            </defs>
+            <circle class="radial-gauge-bg" cx="70" cy="70" r="60"></circle>
+            <circle class="radial-gauge-fill" cx="70" cy="70" r="60"></circle>
+          </svg>
+          <div class="radial-gauge-content">
+            <div class="radial-gauge-val">20%</div>
+            <div class="radial-gauge-sub">Hour 4 Target</div>
+          </div>
+        </div>
+
+        <!-- Milestone Body Info -->
+        <div class="milestone-info-body">
+          <h3>
+            <span class="milestone-title-text">Same-Day Daycare Discharge</span>
+            <span class="milestone-badge-pill">Zero Muscle Detachment</span>
+          </h3>
+          <p class="milestone-info-desc">
+            Thanks to true 4K keyhole portals (3-4 mm), zero deltoid muscle fibers are cut. Patients experience minimal swelling and are safely discharged on the day of surgery with a comfortable arm sling and guided pendulum movements.
+          </p>
+          <div class="milestone-clinical-rationale">
+            <strong>Clinical Rationale:</strong> Double-row knotless anchor bridges ensure pressurized tendon-to-bone contact, drastically speeding up biological footprint integration without knot impingement.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Liquid Wave Divider: Footer Transition -->
+<div class="liquid-wave-divider" aria-hidden="true" style="margin-bottom:-2px">
+  <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+    <path class="liquid-wave-path liquid-wave-path-navy" d="M0,40 C300,70 600,10 900,50 L1200,30 L1200,80 L0,80 Z"></path>
+  </svg>
+</div>
+
 <!-- Hospital Footer with Local GEO Citations & Transit Landmarks -->
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -949,6 +1105,6 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   <!-- Liquid Motion Engine (GSAP, ScrollTrigger, Lenis) -->
   <script src="js/vendor/gsap.min.js"></script>
   <script src="js/vendor/ScrollTrigger.min.js"></script>
-  <script src="js/liquid-motion.js?v=1.4"></script>
+  <script src="js/liquid-motion.js?v=1.5"></script>
 </body>
 </html>

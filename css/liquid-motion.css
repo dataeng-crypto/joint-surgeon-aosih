@@ -404,3 +404,763 @@
 .testi-card-lg * {
   opacity: 1 !important;
 }
+
+/* ==============================================================================
+   PHASE 1: 3D CARD TILT, SPECULAR SHEEN & ROLLING COUNTERS
+   ============================================================================== */
+
+.card-tilt-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease;
+}
+
+.card-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle 320px at var(--sheen-x, 50%) var(--sheen-y, 50%), rgba(255, 255, 255, 0.5) 0%, rgba(77, 208, 225, 0.2) 35%, rgba(255, 255, 255, 0) 75%);
+  transition: opacity 0.3s ease;
+  z-index: 4;
+  mix-blend-mode: overlay;
+}
+
+.card-tilt-3d:hover .card-sheen {
+  opacity: 1;
+}
+
+/* Rolling Odometer Counter */
+.counter-val {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  will-change: contents;
+}
+
+/* Liquid Wave Divider Enhancements */
+.liquid-wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.liquid-wave-divider.wave-inverted {
+  transform: rotate(180deg);
+}
+
+.liquid-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 52px;
+}
+
+@media (min-width: 768px) {
+  .liquid-wave-divider svg {
+    height: 76px;
+  }
+}
+
+.liquid-wave-path-1 {
+  fill: rgba(0, 151, 167, 0.14);
+}
+
+.liquid-wave-path-2 {
+  fill: rgba(77, 208, 225, 0.22);
+}
+
+.liquid-wave-path-3 {
+  fill: #FFFFFF;
+}
+
+.liquid-wave-path-dark {
+  fill: #06182C;
+}
+
+.liquid-wave-path-navy {
+  fill: #0A2540;
+}
+
+/* ==============================================================================
+   PHASE 2: CLINICAL RECOVERY MILESTONES TIMELINE & SCRUBBER
+   ============================================================================== */
+
+.recovery-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+  position: relative;
+  scroll-margin-top: 86px;
+}
+
+.recovery-timeline-box {
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: 0 16px 40px -10px rgba(10, 37, 64, 0.08);
+  position: relative;
+  overflow: hidden;
+  margin-top: 36px;
+}
+
+/* Timeline Interactive Track */
+.timeline-track-wrap {
+  position: relative;
+  margin: 32px 0 44px;
+  padding: 0 20px;
+}
+
+.timeline-track-bar {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.timeline-track-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0097A7 0%, #00ACC1 50%, #4DD0E1 100%);
+  border-radius: 4px;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 12px rgba(0, 151, 167, 0.5);
+}
+
+.timeline-nodes-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.timeline-node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 110px;
+  text-align: center;
+  transition: transform 0.25s ease;
+  position: relative;
+}
+
+.timeline-node-item:hover {
+  transform: translateY(-3px);
+}
+
+.node-dot-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.timeline-node-item.active .node-dot-circle {
+  border-color: #0097A7;
+  background: #0097A7;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 6px rgba(0, 151, 167, 0.2), 0 8px 20px rgba(0, 151, 167, 0.35);
+  transform: scale(1.1);
+}
+
+.timeline-node-item.completed .node-dot-circle {
+  border-color: #0097A7;
+  background: #E0F7FA;
+  color: #0097A7;
+}
+
+.node-time-lbl {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-node-item.active .node-time-lbl {
+  color: #0097A7;
+}
+
+.node-sub-lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+/* Timeline Detail Display Card */
+.milestone-detail-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 151, 167, 0.2);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 0 8px 28px -6px rgba(10, 37, 64, 0.06);
+  position: relative;
+}
+
+.milestone-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.radial-gauge-svg {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+}
+
+.radial-gauge-bg {
+  fill: none;
+  stroke: #E2E8F0;
+  stroke-width: 10;
+}
+
+.radial-gauge-fill {
+  fill: none;
+  stroke: url(#liquidGaugeGrad);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radial-gauge-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial-gauge-val {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.radial-gauge-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0097A7;
+  margin-top: 4px;
+}
+
+.milestone-info-body h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.milestone-badge-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: #E0F7FA;
+  color: #00838F;
+  border: 1px solid rgba(0, 151, 167, 0.3);
+}
+
+.milestone-info-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.milestone-clinical-rationale {
+  background: #F8FAFC;
+  border-left: 3px solid #0097A7;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.milestone-clinical-rationale strong {
+  color: var(--navy);
+}
+
+@media (max-width: 860px) {
+  .milestone-detail-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+  .milestone-info-body h3 {
+    justify-content: center;
+  }
+  .timeline-nodes-row {
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+  }
+  .timeline-node-item {
+    min-width: 90px;
+  }
+  .timeline-track-bar {
+    display: none;
+  }
+}
+
+/* ==============================================================================
+   PHASE 2: INTERACTIVE BEFORE & AFTER DUAL COMPARISON SLIDER
+   ============================================================================== */
+
+.ba-section {
+  padding: 80px 0;
+  background: var(--bg-light);
+  position: relative;
+  scroll-margin-top: 86px;
+}
+
+.ba-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.ba-tab-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ba-tab-btn:hover {
+  border-color: #0097A7;
+  color: #0097A7;
+}
+
+.ba-tab-btn.active {
+  background: #0097A7;
+  border-color: #0097A7;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 151, 167, 0.35);
+}
+
+.ba-slider-container {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px -12px rgba(10, 37, 64, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  user-select: none;
+  touch-action: pan-y;
+  background: #000000;
+  aspect-ratio: 16 / 9;
+}
+
+.ba-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ba-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+
+.ba-layer.ba-before {
+  z-index: 1;
+}
+
+.ba-layer.ba-after {
+  z-index: 2;
+  clip-path: polygon(0 0, var(--split-pos, 50%) 0, var(--split-pos, 50%) 100%, 0 100%);
+  will-change: clip-path;
+}
+
+.ba-badge {
+  position: absolute;
+  top: 20px;
+  z-index: 5;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.ba-badge-before {
+  right: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #FF8A80;
+  border: 1px solid rgba(255, 138, 128, 0.4);
+}
+
+.ba-badge-after {
+  left: 20px;
+  background: rgba(0, 151, 167, 0.9);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 151, 167, 0.4);
+}
+
+/* Draggable Liquid Handle */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split-pos, 50%);
+  width: 4px;
+  background: #FFFFFF;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(0, 151, 167, 0.8);
+}
+
+.ba-handle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0097A7;
+  border: 3px solid #FFFFFF;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  cursor: ew-resize;
+  pointer-events: auto;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ba-handle-button:hover,
+.ba-slider-container.is-dragging .ba-handle-button {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: #00838F;
+}
+
+.ba-handle-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Alignment Stats Strip Below Slider */
+.ba-stats-strip {
+  max-width: 920px;
+  margin: 20px auto 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ba-stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ba-stat-col-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0097A7;
+  font-weight: 800;
+}
+
+.ba-stat-col-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .ba-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ba-slider-container {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ==============================================================================
+   PHASE 3: INTERACTIVE SURGICAL ANATOMY & PROCEDURE MORPHING VISUALIZER
+   ============================================================================== */
+
+.visualizer-section {
+  padding: 80px 0;
+  background: #0A2540;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 86px;
+}
+
+.procedure-visualizer-box {
+  background: rgba(15, 39, 68, 0.85);
+  border: 1px solid rgba(0, 151, 167, 0.35);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  margin-top: 36px;
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.proc-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.proc-tab-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 100px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proc-tab-btn:hover {
+  background: rgba(0, 151, 167, 0.25);
+  color: #FFFFFF;
+  border-color: #4DD0E1;
+}
+
+.proc-tab-btn.active {
+  background: #0097A7;
+  border-color: #4DD0E1;
+  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(0, 151, 167, 0.6);
+}
+
+.proc-stage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Anatomical Visual Stage */
+.proc-anatomy-canvas-box {
+  position: relative;
+  background: #06182C;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(77, 208, 225, 0.25);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proc-anatomy-canvas-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+/* Clickable Anatomical Hotspots */
+.hotspot-dot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0097A7;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 14px rgba(77, 208, 225, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.hotspot-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #4DD0E1;
+  opacity: 0.8;
+  animation: hotspotPulse 2s infinite ease-out;
+}
+
+@keyframes hotspotPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.hotspot-dot:hover,
+.hotspot-dot.active {
+  transform: translate(-50%, -50%) scale(1.3);
+  background: #4DD0E1;
+  color: #0A2540;
+  box-shadow: 0 0 20px #4DD0E1;
+}
+
+/* Comparative Clinical Breakdown */
+.proc-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.proc-info-panel h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.proc-info-panel h3 span {
+  color: #4DD0E1;
+}
+
+.proc-active-hotspot-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(77, 208, 225, 0.35);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  transition: all 0.3s ease;
+}
+
+.proc-active-hotspot-card h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #80DEEA;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proc-active-hotspot-card p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.proc-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin-top: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.proc-comparison-table th,
+.proc-comparison-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.proc-comparison-table th {
+  background: rgba(0, 151, 167, 0.25);
+  color: #80DEEA;
+  font-weight: 700;
+}
+
+.proc-comparison-table td.aosih-col {
+  color: #4DD0E1;
+  font-weight: 700;
+  background: rgba(0, 151, 167, 0.1);
+}
+
+.proc-comparison-table td.trad-col {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 920px) {
+  .proc-stage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
