@@ -42,6 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/liquid-motion.css">
 
   <!-- JSON-LD Structured Data for Search, Local & Answer Engines (AEO) -->
   <script type="application/ld+json">
@@ -101,13 +102,13 @@
             "Friday",
             "Saturday"
           ],
-          "opens": "09:00",
-          "closes": "21:00"
+          "opens": "11:00",
+          "closes": "19:00"
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Sunday",
-          "opens": "09:00",
+          "opens": "11:00",
           "closes": "15:00"
         }
       ],
@@ -520,7 +521,7 @@
       <div class="trust-badges-list">
         <div class="trust-badge-pill">
           <img src="images/review_google.jpeg" alt="Google Reviews">
-          <span class="trust-badge-val">4.9 ★ (500+ Google Reviews)</span>
+          <span class="trust-badge-val">4.9 ★ (3,340+ Google Reviews)</span>
         </div>
         <div class="trust-badge-pill">
           <img src="images/review_practo.png" alt="Practo Verified">
@@ -730,6 +731,44 @@
     </div>
   </div>
 </section>
+
+<!-- Frequently Asked Questions (Aligned 1:1 with Schema.org) -->
+<section class="sp bg-l" id="faq">
+  <div class="container" style="max-width:880px">
+    <div class="sec-hdr text-center">
+      <span class="tag">Recovery &amp; Outcomes FAQ</span>
+      <h2 class="sh">Frequently Asked <span>Questions</span></h2>
+      <p class="ss">Key insights into post-surgical recovery milestones, mobility timelines, and patient care standards.</p>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item-card">
+        <button type="button" class="faq-btn">
+          <span>How quickly can patients walk after joint replacement at AOSIH Jaipur?</span>
+          <div class="faq-toggle-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-ans">
+          With our Direct Anterior Approach (DAA) for hip and Subvastus muscle-sparing technique for knee replacement, most patients begin walking with walker assistance within 4 to 12 hours of surgery. Full independence is typically achieved within 2 to 3 weeks.
+        </div>
+      </div>
+      
+      <div class="faq-item-card">
+        <button type="button" class="faq-btn">
+          <span>What is the patient satisfaction rating for Dr. Naveen Sharma?</span>
+          <div class="faq-toggle-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-ans">
+          Dr. Naveen Sharma and AOSIH maintain a verified 4.9 out of 5.0 star rating on Google based on 3,340+ genuine patient reviews, reflecting exceptional clinical success, rapid recovery, and compassionate post-operative care.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Hospital Footer with Local GEO Citations & Transit Landmarks -->
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -994,5 +1033,10 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   });
 });
 </script>
+  <!-- Liquid Motion Engine (GSAP, ScrollTrigger, Lenis) -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/liquid-motion.js"></script>
 </body>
 </html>

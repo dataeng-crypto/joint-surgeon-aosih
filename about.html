@@ -42,6 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/liquid-motion.css">
 
   <!-- JSON-LD Structured Data for Search, Local & Answer Engines (AEO) -->
   <script type="application/ld+json">
@@ -101,13 +102,13 @@
             "Friday",
             "Saturday"
           ],
-          "opens": "09:00",
-          "closes": "21:00"
+          "opens": "11:00",
+          "closes": "19:00"
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Sunday",
-          "opens": "09:00",
+          "opens": "11:00",
           "closes": "15:00"
         }
       ],
@@ -205,7 +206,7 @@
         }
       ]
     },
-    {
+        {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -213,23 +214,23 @@
           "name": "What is the typical hospital stay duration for joint replacement at AOSIH?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Thanks to our fast-track muscle-sparing protocols (Subvastus for knee, DAA for hip), most patients stay only 2 to 3 days at AOSIH Jaipur. Patients walk within hours of surgery and safely climb stairs before discharge."
+            "text": "Thanks to our fast-track muscle-sparing protocols, most patients stay only 2 to 3 days. Patients walk within hours of surgery and climb stairs under physiotherapist supervision before being safely discharged home."
           }
         },
         {
           "@type": "Question",
-          "name": "What infection control standards are followed in AOSIH Modular OTs?",
+          "name": "What facilities are available for outstation and international patients?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AOSIH operates Class 100 modular operating theatres with vertical laminar airflow, HEPA filtration (40+ air changes per hour), and strict touchless protocols ensuring a zero-infection target protocol."
+            "text": "We offer a dedicated patient concierge service: pre-arrival digital MRI review, airport pickup coordination, nearby accommodation assistance for accompanying family, priority OPD scheduling, and tele-physiotherapy follow-up once you return home."
           }
         },
         {
           "@type": "Question",
-          "name": "What are Dr. Naveen Sharma's qualifications and international training?",
+          "name": "Are cashless insurance claims supported at AOSIH?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dr. Naveen Sharma holds an MS in Orthopedics from Seth GS Medical College and KEM Hospital Mumbai, completed Senior Residency at AIIMS New Delhi, and trained under ISAKOS Fellowships in Germany (Arcus Sportsclinic) and South Korea."
+            "text": "Yes, our cashless mediclaim desk coordinates with all leading TPAs (Star Health, HDFC ERGO, ICICI Lombard, Care, Medi Assist, Paramount, Vidal, etc.) and government schemes. Pre-authorization is handled smoothly before planned admission."
           }
         }
       ]
@@ -496,7 +497,7 @@
           </div>
           <div class="about-stat-box">
             <div class="num">4.9 ★</div>
-            <div class="lbl">Google Verified Rating (500+ Reviews)</div>
+            <div class="lbl">Google Verified Rating (3,340+ Reviews)</div>
           </div>
           <div class="about-stat-box">
             <div class="num">0.0%</div>
@@ -943,5 +944,10 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   });
 });
 </script>
+  <!-- Liquid Motion Engine (GSAP, ScrollTrigger, Lenis) -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/liquid-motion.js"></script>
 </body>
 </html>

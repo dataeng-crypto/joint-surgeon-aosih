@@ -42,6 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/liquid-motion.css">
 
   <!-- JSON-LD Structured Data for Search, Local & Answer Engines (AEO) -->
   <script type="application/ld+json">
@@ -101,13 +102,13 @@
             "Friday",
             "Saturday"
           ],
-          "opens": "09:00",
-          "closes": "21:00"
+          "opens": "11:00",
+          "closes": "19:00"
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Sunday",
-          "opens": "09:00",
+          "opens": "11:00",
           "closes": "15:00"
         }
       ],
@@ -205,7 +206,7 @@
         }
       ]
     },
-    {
+        {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -213,7 +214,7 @@
           "name": "Where is Advance Orthopedic & Sports Injury Hospital (AOSIH) located in Jaipur?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AOSIH is located at E-7, Hanuman Path, Near Metro Pillar 95, New Sanganer Road, Sodala, Jaipur, Rajasthan 302019. It offers direct access via the Jaipur Metro (Metro Pillar 95), and is 4.5 km from Jaipur Railway Junction and 11 km from Jaipur Airport."
+            "text": "AOSIH is located at E-7, Hanuman Path, Near Metro Pillar 95, New Sanganer Road, Sodala, Jaipur. It is 1 minute walk from Pillar 95 Metro Station, 10 minutes from Jaipur Junction Railway Station, and 20 minutes from Jaipur International Airport."
           }
         },
         {
@@ -221,23 +222,23 @@
           "name": "How is Direct Anterior Approach (DAA) Hip Replacement different from conventional surgery?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In DAA Hip Replacement at AOSIH, Dr. Naveen Sharma accesses the hip joint through a natural intermuscular plane from the front, meaning zero muscles or tendons are cut. Patients walk within 4 hours, have no dislocation precautions, and experience faster return to active life."
+            "text": "In DAA Hip Replacement at AOSIH, Dr. Naveen Sharma accesses the hip joint through the natural inter-muscular plane from the front, without detaching or cutting any hip muscles or tendons. This results in minimal blood loss, practically zero dislocation risk, no post-op sitting or sleeping restrictions, and same-day unassisted walking."
           }
         },
         {
           "@type": "Question",
-          "name": "What is Fast-Track Subvastus Knee Replacement (TKR)?",
+          "name": "How soon can I walk and climb stairs after Total Knee Replacement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subvastus Knee Replacement preserves the entire quadriceps muscle mechanism by entering underneath the vastus medialis muscle rather than cutting through the tendon. Patients stand and walk on the day of surgery with minimal pain."
+            "text": "With our subvastus muscle-sparing technique, the quadriceps extensor mechanism remains intact. Most patients stand and walk with walker assistance within 12 to 24 hours of surgery. Stair climbing is initiated under physiotherapist supervision by Day 3 to 5. Most patients discard walker support completely within 2 weeks."
           }
         },
         {
           "@type": "Question",
-          "name": "Does AOSIH provide cashless health insurance / mediclaim facilities?",
+          "name": "Can I get a digital second opinion on my MRI or X-ray if I live outside Jaipur?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. AOSIH features a dedicated Cashless Insurance Desk assisting with pre-authorization across leading TPAs and insurers including Star Health, Care Health, HDFC ERGO, ICICI Lombard, Bajaj Allianz, and government health schemes."
+            "text": "Yes! We have an active Tele-Consultation and Second Opinion Desk. You can upload your MRI/X-ray reports via WhatsApp (+91 82906 88810 / +91 82098 30287) or our consultation modal. Dr. Naveen Sharma personally reviews the scans and conducts a detailed video consultation to explain conservative vs surgical options."
           }
         }
       ]
@@ -1048,7 +1049,7 @@
           </div>
           <div class="hero-stat-item">
             <div class="num">4.9<span>/5</span></div>
-            <div class="lbl">Google Rating (500+ Reviews)</div>
+            <div class="lbl">Google Rating (3,340+ Reviews)</div>
           </div>
           <div class="hero-stat-item">
             <div class="num">0<span>%</span></div>
@@ -1090,7 +1091,7 @@
       <div class="trust-badges-list">
         <a href="https://share.google/rpxaZpfzqdNRAALzp" target="_blank" rel="noopener" class="trust-badge-pill" title="View Verified Google Listing">
           <img src="images/review_google.jpeg" alt="Google Reviews">
-          <span class="trust-badge-val">4.9 ★ (500+ Google Reviews)</span>
+          <span class="trust-badge-val">4.9 ★ (3,340+ Google Reviews)</span>
         </a>
         <div class="trust-badge-pill">
           <img src="images/review_practo.png" alt="Practo Verified">
@@ -2002,5 +2003,10 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   });
 });
 </script>
+  <!-- Liquid Motion Engine (GSAP, ScrollTrigger, Lenis) -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/liquid-motion.js"></script>
 </body>
 </html>
