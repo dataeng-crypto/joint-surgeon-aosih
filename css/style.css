@@ -862,6 +862,106 @@ button, input, select, textarea {
   font-style: italic;
 }
 
+/* Doctor Profile Card (About Page) */
+.doc-profile-card-about {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin: 28px 0 32px;
+  box-shadow: var(--shadow-md);
+  align-items: center;
+  scroll-margin-top: 90px;
+}
+
+.doc-profile-avatar-wrap {
+  background: linear-gradient(135deg, #F0F9FA 0%, #E0F7FA 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 151, 167, 0.25);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 340px;
+  overflow: hidden;
+}
+
+.doc-profile-avatar-wrap img {
+  max-height: 335px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12));
+}
+
+.doc-profile-info .tag {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.doc-profile-info .doc-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.doc-profile-qualification {
+  font-size: 13.5px;
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.doc-profile-summary {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.doc-creds-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doc-creds-pills .cred-pill {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 151, 167, 0.15);
+}
+
+@media (max-width: 768px) {
+  .doc-profile-card-about {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .doc-profile-avatar-wrap {
+    height: 300px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .doc-profile-avatar-wrap img {
+    max-height: 295px;
+  }
+  .doc-creds-pills {
+    justify-content: center;
+  }
+}
+
+
 /* Hospital Comparison Table */
 .clinical-table-wrapper {
   overflow-x: auto;
