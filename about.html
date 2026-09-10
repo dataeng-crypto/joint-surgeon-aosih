@@ -287,9 +287,12 @@
       color: var(--navy);
       border-top: 1px solid var(--border-light);
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-duo { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .about-stats-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
