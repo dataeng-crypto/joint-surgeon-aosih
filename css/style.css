@@ -261,14 +261,14 @@ button, input, select, textarea {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .tbl, .tbr {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 16px;
+  flex-wrap: nowrap;
 }
 
 .tbi {
@@ -337,17 +337,16 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  gap: 10px;
+  min-height: 72px;
+  gap: 12px;
   width: 100%;
 }
 
 .nl {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
-  max-width: 240px;
   text-decoration: none;
 }
 
@@ -362,20 +361,20 @@ button, input, select, textarea {
 .nlt {
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  justify-content: center;
 }
 
 .nlt .b {
   font-size: 13.5px;
   font-weight: 800;
   color: var(--navy);
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .nlt .s {
-  font-size: 10px;
+  font-size: 10.5px;
   color: var(--text-muted);
   font-weight: 600;
   margin-top: 1px;
@@ -480,11 +479,11 @@ button, input, select, textarea {
 .nb {
   background: var(--teal);
   color: #FFFFFF;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
-  margin-left: 8px;
+  margin-left: 6px;
   transition: var(--tr);
   white-space: nowrap;
   border: none;
@@ -1189,16 +1188,16 @@ button, input, select, textarea {
 
 @media (max-width: 1200px) {
   .nli {
-    font-size: 12px;
-    padding: 5px 6px;
+    font-size: 11.5px;
+    padding: 4px 5px;
     gap: 2px;
   }
   .nlt .s {
     display: none;
   }
   .nlt .b {
-    font-size: 13.5px;
-    max-width: 180px;
+    font-size: 13px;
+    white-space: nowrap;
   }
   .nb {
     padding: 7px 12px;
