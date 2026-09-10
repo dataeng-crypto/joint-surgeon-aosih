@@ -223,3 +223,128 @@
     display: none !important;
   }
 }
+
+/* --- Clinical Authority & AEO Summary Card Styling --- */
+.aeo-summary-section {
+  padding: 32px 0 40px;
+  background: var(--bg-light);
+}
+
+.aeo-summary-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--teal);
+  transition: var(--tr);
+}
+
+.aeo-summary-box:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal);
+}
+
+.aeo-summary-box h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.aeo-summary-box h3 svg {
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.aeo-summary-box p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.aeo-summary-box p strong {
+  color: var(--navy);
+}
+
+.aeo-quick-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.aeo-fact {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: var(--tr);
+}
+
+.aeo-fact:hover {
+  background: #FFFFFF;
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 151, 167, 0.08);
+}
+
+.aeo-fact-lbl {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.aeo-fact-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.aeo-fact-val a {
+  color: var(--navy);
+  text-decoration: none;
+  transition: color var(--tr);
+}
+
+.aeo-fact-val a:hover {
+  color: var(--teal);
+}
+
+@media (max-width: 992px) {
+  .aeo-quick-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .aeo-summary-box {
+    padding: 20px 16px;
+  }
+  .aeo-quick-facts {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* --- Absolute Visibility Lock for Testimonials & Cards --- */
+.testi-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+.testi-card * {
+  opacity: 1 !important;
+}

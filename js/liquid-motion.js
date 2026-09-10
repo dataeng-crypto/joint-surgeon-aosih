@@ -303,7 +303,7 @@
       });
     });
 
-    const cardSelectors = ['.dept-card', '.testi-card', '.sidebar-card', '.about-stat-box'];
+    const cardSelectors = ['.dept-card', '.sidebar-card', '.about-stat-box'];
     cardSelectors.forEach((sel) => {
       const cards = document.querySelectorAll(sel);
       if (cards.length > 0) {
@@ -312,12 +312,12 @@
           once: true,
           onEnter: (batch) => {
             gsap.from(batch, {
-              y: 28,
+              y: 20,
               opacity: 0,
-              stagger: 0.08,
-              duration: 0.65,
+              stagger: 0.06,
+              duration: 0.5,
               ease: 'power2.out',
-              overwrite: 'auto'
+              clearProps: 'all'
             });
           }
         });
