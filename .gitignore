@@ -1,0 +1,9 @@
+__pycache__/
+tmp/
+.playwright-cli/
+.agents/
+.codex/
+output/
+outputs/
+tests/
+*.py
