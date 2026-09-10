@@ -2,7 +2,8 @@
  * ==============================================================================
  * AOSIH MASTER LIQUID MOTION CONTROLLER
  * Advance Orthopedic & Sports Injury Hospital | Dr. Naveen Sharma
- * Fluid Canvas Shader, GSAP + Lenis Sync, Wave Morphing, Liquid Micro-Interactions
+ * Fluid Canvas Shader, GSAP ScrollTrigger, Wave Morphing, Liquid Micro-Interactions
+ * 100% Native Scroll Performance (Zero Scroll Hijacking)
  * ==============================================================================
  */
 
@@ -12,42 +13,30 @@
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-  // 1. Lenis Smooth Scroll + GSAP ScrollTrigger Integration
-  let lenis = null;
+  // 1. Smooth In-Page Anchor Navigation (Preserves 100% native wheel/touch scroll)
+  function initAnchorScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#' || href.length < 2) return;
+        try {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const headerOffset = 78;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  function initSmoothScroll() {
-    if (isReducedMotion || typeof Lenis === 'undefined') return;
-
-    try {
-      lenis = new Lenis({
-        duration: 1.15,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 1.8,
-        infinite: false
-      });
-
-      if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
-        lenis.on('scroll', ScrollTrigger.update);
-
-        gsap.ticker.add((time) => {
-          lenis.raf(time * 1000);
-        });
-
-        gsap.ticker.lagSmoothing(0);
-      } else {
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: isReducedMotion ? 'auto' : 'smooth'
+            });
+          }
+        } catch (err) {
+          // Ignore invalid selectors
         }
-        requestAnimationFrame(raf);
-      }
-    } catch (e) {
-      console.warn('Lenis smooth scroll fallback:', e);
-    }
+      });
+    });
   }
 
   // 2. Interactive Fluid Canvas Shader (Hero & Banners)
@@ -293,7 +282,7 @@
     onScroll();
   }
 
-  // 7. Staggered ScrollTrigger Entrance Reveals
+  // 7. Native ScrollTrigger Entrance Reveals (Zero Scroll Hijacking)
   function initScrollReveals() {
     if (isReducedMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
@@ -304,12 +293,12 @@
       gsap.from(hdr, {
         scrollTrigger: {
           trigger: hdr,
-          start: 'top 88%',
-          toggleActions: 'play none none none'
+          start: 'top 90%',
+          once: true
         },
-        y: 28,
+        y: 24,
         opacity: 0,
-        duration: 0.85,
+        duration: 0.7,
         ease: 'power3.out'
       });
     });
@@ -319,13 +308,14 @@
       const cards = document.querySelectorAll(sel);
       if (cards.length > 0) {
         ScrollTrigger.batch(cards, {
-          start: 'top 88%',
+          start: 'top 90%',
+          once: true,
           onEnter: (batch) => {
             gsap.from(batch, {
-              y: 35,
+              y: 28,
               opacity: 0,
-              stagger: 0.12,
-              duration: 0.75,
+              stagger: 0.08,
+              duration: 0.65,
               ease: 'power2.out',
               overwrite: 'auto'
             });
@@ -336,7 +326,7 @@
   }
 
   function init() {
-    initSmoothScroll();
+    initAnchorScroll();
     initFluidCanvas();
     initLiquidWaves();
     initLiquidButtons();

@@ -44,7 +44,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: clip !important;
   overflow-y: visible !important;
   max-width: 100% !important;
