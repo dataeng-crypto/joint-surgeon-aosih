@@ -396,7 +396,12 @@
   function initCardTilt3D() {
     if (isTouchDevice || isReducedMotion) return;
 
-    const cards = document.querySelectorAll('.card-tilt-3d, .dept-card, .treatment-card, .infra-card, .book-card, .testi-card, .testi-card-lg, .about-stat-box, .award-item-box, .aeo-fact');
+    const cards = document.querySelectorAll(
+      '.card-tilt-3d, .dept-card, .treatment-card, .infra-card, .book-card, ' +
+      '.testi-card, .testi-card-lg, .about-stat-box, .award-item-box, .aeo-fact, ' +
+      '.knee-feat-card, .hip-perk-card, .shoulder-perk-card, .fellow-stat-card, ' +
+      '.contact-card-box, .press-card, .sidebar-card, .quick-contact-box, .news-card-box'
+    );
     if (!cards.length) return;
 
     cards.forEach((card) => {
@@ -413,6 +418,9 @@
 
       function updateTilt() {
         if (!isHovered) return;
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(card);
+        }
         const rect = card.getBoundingClientRect();
         const px = (mouseX - rect.left) / rect.width;
         const py = (mouseY - rect.top) / rect.height;
@@ -427,23 +435,40 @@
         reqId = null;
       }
 
-      card.addEventListener('pointerenter', () => {
+      function onEnter() {
         isHovered = true;
-      });
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(card);
+        }
+      }
 
-      card.addEventListener('pointermove', (e) => {
+      function onMove(e) {
+        isHovered = true;
+        if (typeof gsap !== 'undefined' && gsap.getTweensOf(card).length > 0) {
+          gsap.killTweensOf(card);
+        }
         mouseX = e.clientX;
         mouseY = e.clientY;
         if (!reqId) {
           reqId = requestAnimationFrame(updateTilt);
         }
-      }, { passive: true });
+      }
 
-      card.addEventListener('pointerleave', () => {
+      function onLeave() {
         isHovered = false;
         if (reqId) cancelAnimationFrame(reqId);
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(card);
+        }
         card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-      });
+      }
+
+      card.addEventListener('pointerenter', onEnter);
+      card.addEventListener('pointermove', onMove, { passive: true });
+      card.addEventListener('pointerleave', onLeave);
+      card.addEventListener('mouseenter', onEnter);
+      card.addEventListener('mousemove', onMove, { passive: true });
+      card.addEventListener('mouseleave', onLeave);
     });
   }
 
@@ -452,7 +477,7 @@
     const timelineBoxes = document.querySelectorAll('.recovery-timeline-box');
     if (!timelineBoxes.length) return;
 
-    const milestonesData = [
+    const jointMilestones = [
       {
         time: 'Hour 4',
         title: 'Same-Day Bedside Standing & Walking',
@@ -495,7 +520,58 @@
       }
     ];
 
+    const shoulderMilestones = [
+      {
+        time: 'Hour 4',
+        title: 'Same-Day Daycare Discharge',
+        badge: 'Zero Muscle Detachment',
+        pct: 20,
+        desc: 'Thanks to true 4K keyhole portals (3–4 mm), zero deltoid muscle fibers are cut. Patients experience minimal swelling and are safely discharged on the day of surgery with a comfortable arm sling and guided pendulum movements.',
+        rationale: '<strong>Clinical Rationale:</strong> Double-row knotless anchor bridges ensure pressurized tendon-to-bone contact, drastically speeding up biological footprint integration without deltoid trauma or knot impingement.'
+      },
+      {
+        time: 'Day 1',
+        title: 'Pendulum Exercises & Elbow Mobilization',
+        badge: 'Stiffness Prevention',
+        pct: 45,
+        desc: 'Gentle gravity-assisted pendulum exercises, active wrist/finger pumping, and passive elbow flexion-extension begin under physiotherapist guidance to prevent frozen shoulder contracture while keeping repair tensions minimal.',
+        rationale: '<strong>Clinical Rationale:</strong> Early controlled passive movement circulates synovial fluid, reduces capsular edema, and prevents subacromial adhesions without putting tensile strain on repaired tendon fibers.'
+      },
+      {
+        time: 'Day 4',
+        title: 'Active-Assisted Forward Elevation 120°',
+        badge: 'Scapular Control & ROM',
+        pct: 70,
+        desc: 'Patients advance to pulley-assisted elevation and supine cane exercises reaching 120° forward flexion. Cryotherapy compression reduces local inflammation, enabling comfortable sleep in a semi-reclined posture.',
+        rationale: '<strong>Clinical Rationale:</strong> Early scapulothoracic stabilization exercises maintain correct glenohumeral rhythm and prevent compensatory trapezius hiking during upper limb movement.'
+      },
+      {
+        time: 'Week 2',
+        title: 'Sling Weaning & Desk Work Return',
+        badge: 'Active Daily Living',
+        pct: 88,
+        desc: 'Patients begin progressive weaning from the abduction sling for light desk work, typing, and waist-level daily activities. Waterproof dressings permit regular showers without infection risk.',
+        rationale: '<strong>Clinical Rationale:</strong> Strong fibroblastic footprint bridge integration by week 2 allows safe unweighted active-assisted range of motion and gradual functional independence.'
+      },
+      {
+        time: 'Month 3–6',
+        title: 'Overhead Sports, Gym & Heavy Lifting Return',
+        badge: 'Full Functional Recovery',
+        pct: 100,
+        desc: 'Patients achieve complete 165°+ active overhead elevation, full external rotation, and safely return to badminton, swimming, gym workouts, and overhead athletic activities without pain.',
+        rationale: '<strong>Clinical Rationale:</strong> Mature Sharpey fiber osseointegration across the anatomical footprint restores native biomechanical load tolerance with less than 3% re-tear rates.'
+      }
+    ];
+
     timelineBoxes.forEach((box) => {
+      const isShoulder = 
+        document.body.dataset.page === 'shoulder' ||
+        window.location.pathname.includes('shoulder') ||
+        !!document.querySelector('.hero-shoulder') ||
+        ((box.closest('section')?.querySelector('h2')?.textContent || '')).toLowerCase().includes('shoulder');
+
+      const milestonesData = isShoulder ? shoulderMilestones : jointMilestones;
+
       const nodeItems = box.querySelectorAll('.timeline-node-item');
       const progressBar = box.querySelector('.timeline-track-progress');
       const gaugeRing = box.querySelector('.radial-gauge-fill');
@@ -567,6 +643,11 @@
       function onPointerDown(e) {
         isDragging = true;
         container.classList.add('is-dragging');
+        if (container.setPointerCapture) {
+          try {
+            container.setPointerCapture(e.pointerId);
+          } catch (err) {}
+        }
         updateSplit(e.clientX);
       }
 
@@ -575,17 +656,41 @@
         updateSplit(e.clientX);
       }
 
-      function onPointerUp() {
+      function onPointerUp(e) {
         if (isDragging) {
           isDragging = false;
           container.classList.remove('is-dragging');
+          if (container.releasePointerCapture && e && e.pointerId) {
+            try {
+              container.releasePointerCapture(e.pointerId);
+            } catch (err) {}
+          }
         }
       }
 
       container.addEventListener('pointerdown', onPointerDown);
+      container.addEventListener('pointermove', onPointerMove);
+      container.addEventListener('pointerup', onPointerUp);
+      container.addEventListener('pointercancel', onPointerUp);
       window.addEventListener('pointermove', onPointerMove, { passive: true });
       window.addEventListener('pointerup', onPointerUp, { passive: true });
       window.addEventListener('pointercancel', onPointerUp, { passive: true });
+
+      // Ensure shoulder slider does not show knee ACL graphic on initial load if present in static HTML
+      const isShoulderSlider = 
+        document.body.dataset.page === 'shoulder' ||
+        window.location.pathname.includes('shoulder') ||
+        !!container.closest('#shoulder') ||
+        (container.querySelector('.ba-layer.ba-before img')?.getAttribute('src') || '').includes('shoulder');
+
+      if (isShoulderSlider) {
+        const afterImg = container.querySelector('.ba-layer.ba-after img');
+        if (afterImg && (afterImg.getAttribute('src') || '').includes('acl_surgery_graphic')) {
+          afterImg.setAttribute('src', 'images/bankart_case.jpg');
+          afterImg.src = 'images/bankart_case.jpg';
+          afterImg.alt = 'Post-Operative Shoulder Keyhole Fixation';
+        }
+      }
 
       const parentSection = container.closest('.ba-section') || container.parentElement;
       const tabBtns = parentSection ? parentSection.querySelectorAll('.ba-tab-btn') : [];
@@ -611,7 +716,7 @@
           },
           shoulder: {
             beforeImg: 'images/shoulder_dislocation.jpg',
-            afterImg: 'images/acl_surgery_graphic.png',
+            afterImg: 'images/bankart_case.jpg',
             beforeBadge: 'Pre-Op: Full Rotator Cuff Tear',
             afterBadge: 'Post-Op: Double-Row Keyhole Fixation',
             stat1: ['Incision Portals', '3 x 4mm Keyholes (Zero Muscle Split)'],
@@ -722,7 +827,7 @@
       shoulder: {
         title: 'Double-Row 4K Keyhole Shoulder Repair',
         subtitle: 'Anatomical Footprint Compression vs Single-Row Repair',
-        image: 'images/acl_surgery_graphic.png',
+        image: 'images/bankart_case.jpg',
         hotspots: [
           {
             id: 1, x: '48%', y: '34%',
@@ -826,6 +931,130 @@
     });
   }
 
+  // 13. Mobile Navigation Drawer & Window Resize Scroll-Lock Safety Integration
+  function initMobileMenuSafety() {
+    function closeMobileMenuSafely() {
+      const mmenu = document.getElementById('mmenu');
+      const hbtn = document.getElementById('hbtn');
+
+      if (mmenu && mmenu.classList.contains('open')) {
+        mmenu.classList.remove('open');
+      }
+      if (hbtn && hbtn.classList.contains('open')) {
+        hbtn.classList.remove('open');
+        hbtn.setAttribute('aria-expanded', 'false');
+      }
+      if (document.body.classList.contains('menu-open')) {
+        document.body.classList.remove('menu-open');
+      }
+      const apptModal = document.getElementById('appointmentModal');
+      if ((!apptModal || !apptModal.classList.contains('open')) && document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 1. Clear scroll lock and close mobile drawer if screen is resized > 1050px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1050) {
+        closeMobileMenuSafely();
+      }
+    }, { passive: true });
+
+    // 2. Global tap/click safeguard: ensure body.menu-open is cleanly removed if user taps outside mobile drawer
+    function handleOutsideInteraction(e) {
+      const mmenu = document.getElementById('mmenu');
+      const hbtn = document.getElementById('hbtn');
+      const isMenuOpen =
+        (mmenu && mmenu.classList.contains('open')) ||
+        (hbtn && hbtn.classList.contains('open')) ||
+        document.body.classList.contains('menu-open');
+
+      if (!isMenuOpen) return;
+
+      // If interaction target is outside mobile drawer and outside hamburger toggle button
+      if (mmenu && !mmenu.contains(e.target) && (!hbtn || !hbtn.contains(e.target))) {
+        closeMobileMenuSafely();
+      }
+    }
+
+    document.addEventListener('click', handleOutsideInteraction);
+    document.addEventListener('pointerdown', (e) => {
+      const mmenu = document.getElementById('mmenu');
+      const hbtn = document.getElementById('hbtn');
+      const isMenuOpen =
+        (mmenu && mmenu.classList.contains('open')) ||
+        (hbtn && hbtn.classList.contains('open')) ||
+        document.body.classList.contains('menu-open');
+
+      if (isMenuOpen && mmenu && !mmenu.contains(e.target) && (!hbtn || !hbtn.contains(e.target))) {
+        closeMobileMenuSafely();
+      }
+    });
+
+    // 3. Keep body.menu-open synchronized with hamburger button toggles
+    const hbtn = document.getElementById('hbtn');
+    const mmenu = document.getElementById('mmenu');
+    if (hbtn && mmenu) {
+      hbtn.addEventListener('click', () => {
+        setTimeout(() => {
+          const isOpen = mmenu.classList.contains('open') || hbtn.classList.contains('open');
+          document.body.classList.toggle('menu-open', isOpen);
+          if (!isOpen) {
+            const apptModal = document.getElementById('appointmentModal');
+            if (!apptModal || !apptModal.classList.contains('open')) {
+              document.body.style.overflow = '';
+            }
+          }
+        }, 0);
+      });
+
+      // Close drawer whenever any internal navigation anchor is clicked
+      mmenu.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener('click', () => {
+          closeMobileMenuSafely();
+        });
+      });
+
+      // Reactive MutationObserver to ensure body.menu-open is cleared whenever mmenu class changes
+      if (typeof MutationObserver !== 'undefined') {
+        const observer = new MutationObserver(() => {
+          const isOpen = mmenu.classList.contains('open') || hbtn.classList.contains('open');
+          if (!isOpen) {
+            document.body.classList.remove('menu-open');
+            const apptModal = document.getElementById('appointmentModal');
+            if (!apptModal || !apptModal.classList.contains('open')) {
+              document.body.style.overflow = '';
+            }
+          } else {
+            document.body.classList.add('menu-open');
+          }
+        });
+        observer.observe(mmenu, { attributes: true, attributeFilter: ['class'] });
+      }
+    }
+
+    // Hook into global cm() function to guarantee cleanup
+    const patchCm = () => {
+      if (typeof window.cm === 'function' && !window.cm._patched) {
+        const origCm = window.cm;
+        window.cm = function() {
+          origCm.apply(this, arguments);
+          closeMobileMenuSafely();
+        };
+        window.cm._patched = true;
+      }
+    };
+    patchCm();
+    setTimeout(patchCm, 100);
+
+    // 4. Keyboard Escape safeguard
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenuSafely();
+      }
+    });
+  }
+
   function init() {
     initAnchorScroll();
     initFluidCanvas();
@@ -839,6 +1068,7 @@
     initRecoveryTimeline();
     initBeforeAfterSliders();
     initProcedureVisualizer();
+    initMobileMenuSafety();
   }
 
   if (document.readyState === 'loading') {

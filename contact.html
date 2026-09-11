@@ -52,8 +52,8 @@
     {
       "@type": [
         "Hospital",
-        "MedicalBusiness",
         "MedicalClinic",
+        "MedicalBusiness",
         "EmergencyService"
       ],
       "@id": "https://www.jointsspecialist.com/#hospital",
@@ -67,7 +67,7 @@
       "url": "https://www.jointsspecialist.com/",
       "logo": "https://www.jointsspecialist.com/images/aosih_logo.svg",
       "image": "https://www.jointsspecialist.com/images/gallery_img_7762.webp",
-      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma.",
+      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) at Sodala Metro Pillar 95, New Sanganer Road, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) with over 20,000+ completed surgeries, 3,340+ verified reviews (4.9 rating), and OPD consultation timings 11:00 AM - 7:00 PM Mon-Sat.",
       "telephone": [
         "+91-8290688810",
         "+91-8209830287",
@@ -150,44 +150,60 @@
         "worstRating": "1"
       },
       "founder": {
-        "@type": "Physician",
-        "@id": "https://www.jointsspecialist.com/#physician",
-        "name": "Dr. Naveen Sharma",
-        "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
-        "gender": "Male",
-        "medicalSpecialty": [
-          "Orthopedic",
-          "Arthroplasty",
-          "SportsMedicine"
-        ],
-        "alumniOf": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "Seth GS Medical College and KEM Hospital Mumbai"
-          },
-          {
-            "@type": "EducationalOrganization",
-            "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
-          }
-        ],
-        "memberOf": [
-          {
-            "@type": "Organization",
-            "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
-          },
-          {
-            "@type": "Organization",
-            "name": "Indian Orthopaedic Association (IOA)"
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/drnaveensharmaortho/",
-          "https://x.com/drnaveensharma",
-          "https://www.instagram.com/naveenorthokem/",
-          "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
-          "https://share.google/rpxaZpfzqdNRAALzp"
-        ]
+        "@id": "https://www.jointsspecialist.com/#physician"
+      },
+      "medicalDirector": {
+        "@id": "https://www.jointsspecialist.com/#physician"
       }
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.jointsspecialist.com/#physician",
+      "name": "Dr. Naveen Sharma",
+      "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
+      "gender": "Male",
+      "url": "https://www.jointsspecialist.com/about.html",
+      "image": "https://www.jointsspecialist.com/images/dr_naveen_sharma.webp",
+      "telephone": "+91-8290688810",
+      "description": "Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) is the Director and Chief Joint Surgeon at Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur with over 20,000+ completed surgeries and 4.9 rating across 3,340+ reviews.",
+      "worksFor": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "hospitalAffiliation": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "medicalSpecialty": [
+        "Orthopedic",
+        "Arthroplasty",
+        "SportsMedicine"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Seth GS Medical College and KEM Hospital Mumbai"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Indian Orthopaedic Association (IOA)"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/drnaveensharmaortho/",
+        "https://x.com/drnaveensharma",
+        "https://www.instagram.com/naveenorthokem/",
+        "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
+        "https://share.google/rpxaZpfzqdNRAALzp"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -222,7 +238,7 @@
           "name": "What are the OPD consultation timings at AOSIH?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Outpatient consultations run Monday through Saturday from 11:00 AM to 07:00 PM. Emergency joint trauma admissions are open 24/7."
+            "text": "OPD consultations run Monday to Saturday from 11:00 AM to 7:00 PM. Emergency orthopedic and trauma admissions operate 24x7. Prior appointment booking is recommended for reduced waiting times."
           }
         }
       ]
@@ -486,7 +502,7 @@
 <div class="mm" id="mmenu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
     <div style="font-weight:800;font-size:16px;color:var(--navy)">AOSIH Navigation</div>
-    <button onclick="cm()" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
+    <button onclick="cm()" aria-label="Close Navigation Menu" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
   </div>
   <a href="index.html" class="mnl" onclick="cm()">Home</a>
   
@@ -495,12 +511,14 @@
     <a href="about.html" onclick="cm()">Hospital Leadership</a>
     <a href="about.html#infrastructure" onclick="cm()">Modular OTs &amp; Technology</a>
     <a href="about.html#team" onclick="cm()">Clinical Care Team</a>
+    <a href="about.html#safety" onclick="cm()">Patient Safety Standards</a>
   </div>
   
   <div class="mnl">Knee Surgery</div>
   <div class="ms">
     <a href="knee-arthroscopy.html" onclick="cm()">Total Knee Replacement</a>
     <a href="knee-arthroscopy.html#subvastus" onclick="cm()">Subvastus Muscle-Sparing TKR</a>
+    <a href="knee-arthroscopy.html#arthroscopy" onclick="cm()">Keyhole Arthroscopy</a>
     <a href="knee-arthroscopy.html#acl" onclick="cm()">ACL Ligament Reconstruction</a>
     <a href="knee-arthroscopy.html#meniscus" onclick="cm()">Meniscus Repair</a>
   </div>
@@ -510,12 +528,15 @@
     <a href="hip-replacement.html" onclick="cm()">DAA Hip Replacement</a>
     <a href="hip-replacement.html#avn" onclick="cm()">AVN Hip Treatment</a>
     <a href="hip-replacement.html#thr" onclick="cm()">Total Hip Replacement</a>
+    <a href="hip-replacement.html#recovery" onclick="cm()">Rapid Recovery Protocol</a>
   </div>
   
   <div class="mnl">Shoulder Surgery</div>
   <div class="ms">
     <a href="shoulder-surgery.html" onclick="cm()">Rotator Cuff Repair</a>
-    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart &amp; Latarjet</a>
+    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart Labral Repair</a>
+    <a href="shoulder-surgery.html#latarjet" onclick="cm()">Latarjet Bone Transfer</a>
+    <a href="shoulder-surgery.html#frozen" onclick="cm()">Frozen Shoulder Hydrodilatation</a>
   </div>
   
   <a href="testimonials.html" class="mnl" onclick="cm()">Patient Recovery Stories</a>
@@ -690,11 +711,11 @@
       <div>
         <div class="duo-img-grid">
           <div class="duo-img-box">
-            <img src="images/hospital_building.jpg" alt="AOSIH Hospital Building Entrance">
+            <img src="images/hospital_building.jpg" alt="AOSIH Hospital Building Entrance" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
             <div class="duo-caption">AOSIH Main Entrance &amp; Drop-off</div>
           </div>
           <div class="duo-img-box">
-            <img src="images/hospital_reception.jpg" alt="AOSIH Hospital Reception Desk">
+            <img src="images/hospital_reception.jpg" alt="AOSIH Hospital Reception Desk" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
             <div class="duo-caption">Inpatient Coordination &amp; Helpdesk</div>
           </div>
         </div>
@@ -848,7 +869,7 @@ if (onPageForm) {
           </div>
         </div>
         <p class="ftg">
-          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS).
+          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow). Over 20,000+ completed surgeries, 4.9★ rating with 3,340+ verified reviews.
         </p>
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,151,167,.2);border:1px solid rgba(0,151,167,.4);padding:6px 14px;border-radius:100px;font-size:11.5px;color:#80DEEA;font-weight:700;margin-bottom:20px">
           Class 100 Modular OT • Landmark Metro Pillar 95, Sodala, Jaipur
@@ -897,7 +918,8 @@ if (onPageForm) {
           E-7, Hanuman Path, Near Metro Pillar 95,<br>
           New Sanganer Road, Sodala,<br>
           Jaipur, Rajasthan &mdash; 302019<br><br>
-          <strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
+          <strong>OPD Timings:</strong> Mon&ndash;Sat 11:00 AM &ndash; 7:00 PM (Sun 11:00 AM &ndash; 3:00 PM)<br>
+          <strong>Emergency:</strong> 24/7 Joint Trauma Care<br><br><strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
           <strong>Hospital Desk:</strong> <a href="tel:+918209830287" style="color:#80DEEA">+91 82098 30287</a><br>
           <strong>Patient Care:</strong> <a href="tel:+919828504050" style="color:#80DEEA">+91 98285 04050</a><br>
           <strong>Email:</strong> <a href="mailto:naveenorthokem@gmail.com" style="color:#80DEEA">naveenorthokem@gmail.com</a>
@@ -990,7 +1012,7 @@ if (onPageForm) {
 <!-- Floating Action Buttons -->
 <div class="float-cta">
   <a href="https://wa.me/918290688810?text=Hello%20AOSIH%20Hospital,%20I%20want%20to%20consult%20Dr.%20Naveen%20Sharma" target="_blank" rel="noopener" class="float-btn fw2" aria-label="Chat on WhatsApp">
-    <img src="images/whatsapp.png" alt="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" onerror="this.onerror=null;this.style.display='none';">
   </a>
   <a href="tel:+918290688810" class="float-btn fc3" aria-label="Call Hospital">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.22 4 2 2 0 012.18 2h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.72 6.72l1.49-1.49a2 2 0 012.11-.45 12 12 0 002.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1006,6 +1028,7 @@ if (hbtn && mmenu) {
   hbtn.addEventListener('click', () => {
     const o = hbtn.classList.toggle('open');
     mmenu.classList.toggle('open', o);
+    document.body.classList.toggle('menu-open', o);
     hbtn.setAttribute('aria-expanded', String(o));
     document.body.style.overflow = o ? 'hidden' : '';
   });
@@ -1014,10 +1037,16 @@ function cm() {
   if (hbtn && mmenu) {
     hbtn.classList.remove('open');
     mmenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
     hbtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 }
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1080) {
+    cm();
+  }
+});
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { cm(); closeModal(); } });
 
 // Sticky Header Shadow

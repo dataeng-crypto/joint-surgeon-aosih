@@ -1162,5 +1162,72 @@
   .proc-stage-grid {
     grid-template-columns: 1fr;
   }
+  .proc-stage-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .proc-info-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
 }
+
+/* ==============================================================================
+   RESPONSIVE MOBILE OVERRIDES: VISUALIZER & RECOVERY TIMELINE
+   ============================================================================== */
+@media (max-width: 640px) {
+  /* Procedure Visualizer Mobile Fit */
+  .procedure-visualizer-box {
+    padding: 20px 14px;
+    margin-top: 24px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .proc-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .proc-stage-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .proc-info-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .proc-comparison-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    font-size: 11.5px;
+  }
+  .proc-comparison-table th,
+  .proc-comparison-table td {
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+  .proc-anatomy-canvas-box {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Recovery Milestones Box Mobile Fit */
+  .recovery-timeline-box {
+    padding: 24px 14px;
+    margin-top: 24px;
+  }
+  .timeline-track-wrap {
+    padding: 0 4px;
+    margin: 16px 0 24px;
+  }
+  .milestone-detail-card {
+    padding: 20px 14px;
+  }
+}
+
 

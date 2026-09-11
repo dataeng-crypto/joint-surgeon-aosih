@@ -52,8 +52,8 @@
     {
       "@type": [
         "Hospital",
-        "MedicalBusiness",
         "MedicalClinic",
+        "MedicalBusiness",
         "EmergencyService"
       ],
       "@id": "https://www.jointsspecialist.com/#hospital",
@@ -67,7 +67,7 @@
       "url": "https://www.jointsspecialist.com/",
       "logo": "https://www.jointsspecialist.com/images/aosih_logo.svg",
       "image": "https://www.jointsspecialist.com/images/gallery_img_7762.webp",
-      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma.",
+      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) at Sodala Metro Pillar 95, New Sanganer Road, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) with over 20,000+ completed surgeries, 3,340+ verified reviews (4.9 rating), and OPD consultation timings 11:00 AM - 7:00 PM Mon-Sat.",
       "telephone": [
         "+91-8290688810",
         "+91-8209830287",
@@ -150,44 +150,60 @@
         "worstRating": "1"
       },
       "founder": {
-        "@type": "Physician",
-        "@id": "https://www.jointsspecialist.com/#physician",
-        "name": "Dr. Naveen Sharma",
-        "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
-        "gender": "Male",
-        "medicalSpecialty": [
-          "Orthopedic",
-          "Arthroplasty",
-          "SportsMedicine"
-        ],
-        "alumniOf": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "Seth GS Medical College and KEM Hospital Mumbai"
-          },
-          {
-            "@type": "EducationalOrganization",
-            "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
-          }
-        ],
-        "memberOf": [
-          {
-            "@type": "Organization",
-            "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
-          },
-          {
-            "@type": "Organization",
-            "name": "Indian Orthopaedic Association (IOA)"
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/drnaveensharmaortho/",
-          "https://x.com/drnaveensharma",
-          "https://www.instagram.com/naveenorthokem/",
-          "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
-          "https://share.google/rpxaZpfzqdNRAALzp"
-        ]
+        "@id": "https://www.jointsspecialist.com/#physician"
+      },
+      "medicalDirector": {
+        "@id": "https://www.jointsspecialist.com/#physician"
       }
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.jointsspecialist.com/#physician",
+      "name": "Dr. Naveen Sharma",
+      "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
+      "gender": "Male",
+      "url": "https://www.jointsspecialist.com/about.html",
+      "image": "https://www.jointsspecialist.com/images/dr_naveen_sharma.webp",
+      "telephone": "+91-8290688810",
+      "description": "Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) is the Director and Chief Joint Surgeon at Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur with over 20,000+ completed surgeries and 4.9 rating across 3,340+ reviews.",
+      "worksFor": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "hospitalAffiliation": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "medicalSpecialty": [
+        "Orthopedic",
+        "Arthroplasty",
+        "SportsMedicine"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Seth GS Medical College and KEM Hospital Mumbai"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Indian Orthopaedic Association (IOA)"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/drnaveensharmaortho/",
+        "https://x.com/drnaveensharma",
+        "https://www.instagram.com/naveenorthokem/",
+        "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
+        "https://share.google/rpxaZpfzqdNRAALzp"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -208,25 +224,25 @@
     },
     {
       "@type": "MedicalProcedure",
+      "@id": "https://www.jointsspecialist.com/knee-arthroscopy.html#subvastus",
       "name": "Subvastus Total Knee Replacement",
       "alternateName": "Fast-Track Subvastus TKR",
       "procedureType": "https://schema.org/SurgicalProcedure",
       "bodyLocation": "Knee Joint",
-      "description": "Quadriceps-sparing total knee arthroplasty entering beneath the vastus medialis muscle with zero incision through the extensor tendon mechanism, enabling Day-1 walking.",
+      "description": "Quadriceps-sparing total knee arthroplasty entering beneath the vastus medialis muscle with zero incision through the extensor tendon mechanism, enabling unassisted walking within hours.",
       "performer": {
-        "@type": "Physician",
-        "name": "Dr. Naveen Sharma"
+        "@id": "https://www.jointsspecialist.com/#physician"
       }
     },
     {
       "@type": "MedicalProcedure",
+      "@id": "https://www.jointsspecialist.com/knee-arthroscopy.html#acl",
       "name": "Anatomical ACL Reconstruction",
       "procedureType": "https://schema.org/SurgicalProcedure",
       "bodyLocation": "Anterior Cruciate Ligament",
       "description": "4K keyhole arthroscopic ACL reconstruction using autologous Peroneus longus or hamstring tendon grafts with all-inside suspensory cortical button fixation.",
       "performer": {
-        "@type": "Physician",
-        "name": "Dr. Naveen Sharma"
+        "@id": "https://www.jointsspecialist.com/#physician"
       }
     },
     {
@@ -237,7 +253,7 @@
           "name": "Why is the Subvastus approach superior to standard knee replacement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The subvastus technique accesses the joint beneath the vastus medialis muscle without cutting the quadriceps tendon. This preserves extensor power, causes far less pain, avoids straight-leg-raise lag, and allows patients to walk on the day of surgery."
+            "text": "The subvastus technique accesses the joint beneath the vastus medialis muscle without cutting the quadriceps tendon or muscle fibers. This eliminates extensor lag, reduces surgical blood loss, significantly cuts post-op pain, and enables unassisted walking within hours."
           }
         },
         {
@@ -245,7 +261,7 @@
           "name": "When can I resume driving and normal activities after knee replacement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most patients resume driving between 3 to 4 weeks after subvastus surgery once emergency braking reflex is restored. Office work can often resume by 2 to 3 weeks."
+            "text": "Most patients resume driving between 3 to 4 weeks after subvastus surgery once emergency braking reflex and full quadriceps control are regained. Desk-based office work can be resumed in 2 to 3 weeks."
           }
         },
         {
@@ -253,7 +269,7 @@
           "name": "Why choose Peroneus longus autograft for ACL reconstruction?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Peroneus longus autograft offers exceptional tensile strength (over 4,000 N) and thick graft diameter (8.5-9.5 mm) while avoiding the hamstring weakness and knee flexion deficit caused by hamstring harvesting."
+            "text": "Peroneus longus autograft offers exceptional tensile strength (over 4,000 N) and large graft diameter (8.5–9.5 mm) while avoiding hamstring donor-site knee flexion weakness or patellar tendon anterior knee numbness."
           }
         }
       ]
@@ -447,7 +463,7 @@
 <div class="mm" id="mmenu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
     <div style="font-weight:800;font-size:16px;color:var(--navy)">AOSIH Navigation</div>
-    <button onclick="cm()" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
+    <button onclick="cm()" aria-label="Close Navigation Menu" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
   </div>
   <a href="index.html" class="mnl" onclick="cm()">Home</a>
   
@@ -456,12 +472,14 @@
     <a href="about.html" onclick="cm()">Hospital Leadership</a>
     <a href="about.html#infrastructure" onclick="cm()">Modular OTs &amp; Technology</a>
     <a href="about.html#team" onclick="cm()">Clinical Care Team</a>
+    <a href="about.html#safety" onclick="cm()">Patient Safety Standards</a>
   </div>
   
   <div class="mnl">Knee Surgery</div>
   <div class="ms">
     <a href="knee-arthroscopy.html" onclick="cm()">Total Knee Replacement</a>
     <a href="knee-arthroscopy.html#subvastus" onclick="cm()">Subvastus Muscle-Sparing TKR</a>
+    <a href="knee-arthroscopy.html#arthroscopy" onclick="cm()">Keyhole Arthroscopy</a>
     <a href="knee-arthroscopy.html#acl" onclick="cm()">ACL Ligament Reconstruction</a>
     <a href="knee-arthroscopy.html#meniscus" onclick="cm()">Meniscus Repair</a>
   </div>
@@ -471,12 +489,15 @@
     <a href="hip-replacement.html" onclick="cm()">DAA Hip Replacement</a>
     <a href="hip-replacement.html#avn" onclick="cm()">AVN Hip Treatment</a>
     <a href="hip-replacement.html#thr" onclick="cm()">Total Hip Replacement</a>
+    <a href="hip-replacement.html#recovery" onclick="cm()">Rapid Recovery Protocol</a>
   </div>
   
   <div class="mnl">Shoulder Surgery</div>
   <div class="ms">
     <a href="shoulder-surgery.html" onclick="cm()">Rotator Cuff Repair</a>
-    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart &amp; Latarjet</a>
+    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart Labral Repair</a>
+    <a href="shoulder-surgery.html#latarjet" onclick="cm()">Latarjet Bone Transfer</a>
+    <a href="shoulder-surgery.html#frozen" onclick="cm()">Frozen Shoulder Hydrodilatation</a>
   </div>
   
   <a href="testimonials.html" class="mnl" onclick="cm()">Patient Recovery Stories</a>
@@ -543,11 +564,11 @@
 
         <div class="duo-img-grid">
           <div class="duo-img-box">
-            <img src="images/knee_replacement_graphic.png" alt="Clinical Knee Examination">
+            <img src="images/knee_replacement_graphic.png" alt="Clinical Knee Examination" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
             <div class="duo-caption">Pre-Operative Knee Alignment &amp; Digital Planning</div>
           </div>
           <div class="duo-img-box">
-            <img src="images/osteoarthritis_legs_b4_after.jpg" alt="Rapid Recovery Walking">
+            <img src="images/osteoarthritis_legs_b4_after.jpg" alt="Rapid Recovery Walking" onerror="this.onerror=null;this.src='images/rapid_recovery_walking.jpg';">
             <div class="duo-caption">Day-1 Post-Operative Ambulation Protocol</div>
           </div>
         </div>
@@ -620,11 +641,11 @@
         </p>
         <div class="duo-img-grid">
           <div class="duo-img-box">
-            <img src="images/gallery_img_4436.webp" alt="Arthroscopy Tower Screen">
+            <img src="images/gallery_img_4436.webp" alt="Arthroscopy Tower Screen" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
             <div class="duo-caption">Karl Storz 4K Visualization System</div>
           </div>
           <div class="duo-img-box">
-            <img src="images/meniscus_tear.jpg" alt="Meniscus Tear Arthroscopic View">
+            <img src="images/meniscus_tear.jpg" alt="Meniscus Tear Arthroscopic View" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
             <div class="duo-caption">Arthroscopic Meniscus Tear Evaluation</div>
           </div>
         </div>
@@ -645,7 +666,7 @@
         </p>
         
         <div class="article-img-box">
-          <img src="images/gallery_img_5501.webp" alt="Athlete Sports Injury Recovery">
+          <img src="images/gallery_img_5501.webp" alt="Athlete Sports Injury Recovery" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
           <div class="caption">Sports-Specific Rehabilitation Leading to Full Return-to-Play</div>
         </div>
 
@@ -725,7 +746,7 @@
         </div>
 
         <div class="sidebar-card" style="text-align:center">
-          <img src="images/knee_book_cover.jpeg" alt="Complete Guide to Knee Replacement" style="width:140px;margin:0 auto 14px;border-radius:6px;box-shadow:var(--shadow-sm)">
+          <img src="images/knee_book_cover.jpeg" alt="Complete Guide to Knee Replacement" onerror="this.onerror=null;this.src='images/press_1.jpg';" style="width:140px;margin:0 auto 14px;border-radius:6px;box-shadow:var(--shadow-sm)">
           <h4 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px">Complete Guide to Knee Replacement</h4>
           <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin-bottom:16px">Authored by Dr. Naveen Sharma for patients preparing for knee arthroplasty.</p>
           <button type="button" class="btn btn-o" style="width:100%" data-open-modal="appointment">Request Free Patient Guide</button>
@@ -769,13 +790,13 @@
     <div class="ba-slider-container" style="--split-pos: 50%;">
       <!-- Layer 1: Before (Bottom) -->
       <div class="ba-layer ba-before">
-        <img src="images/knee_clinical_photo.jpg" alt="Pre-Operative Knee Alignment">
+        <img src="images/knee_clinical_photo.jpg" alt="Pre-Operative Knee Alignment" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         <span class="ba-badge ba-badge-before">Pre-Op: Grade 4 Varus Bowing</span>
       </div>
 
       <!-- Layer 2: After (Top Clip) -->
       <div class="ba-layer ba-after">
-        <img src="images/knee_replacement_graphic.png" alt="Post-Operative Knee Alignment">
+        <img src="images/knee_replacement_graphic.png" alt="Post-Operative Knee Alignment" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         <span class="ba-badge ba-badge-after">Post-Op: 0° Neutral Alignment (AOSIH)</span>
       </div>
 
@@ -910,7 +931,7 @@
           </div>
         </div>
         <p class="ftg">
-          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS).
+          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow). Over 20,000+ completed surgeries, 4.9★ rating with 3,340+ verified reviews.
         </p>
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,151,167,.2);border:1px solid rgba(0,151,167,.4);padding:6px 14px;border-radius:100px;font-size:11.5px;color:#80DEEA;font-weight:700;margin-bottom:20px">
           Class 100 Modular OT • Landmark Metro Pillar 95, Sodala, Jaipur
@@ -959,7 +980,8 @@
           E-7, Hanuman Path, Near Metro Pillar 95,<br>
           New Sanganer Road, Sodala,<br>
           Jaipur, Rajasthan &mdash; 302019<br><br>
-          <strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
+          <strong>OPD Timings:</strong> Mon&ndash;Sat 11:00 AM &ndash; 7:00 PM (Sun 11:00 AM &ndash; 3:00 PM)<br>
+          <strong>Emergency:</strong> 24/7 Joint Trauma Care<br><br><strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
           <strong>Hospital Desk:</strong> <a href="tel:+918209830287" style="color:#80DEEA">+91 82098 30287</a><br>
           <strong>Patient Care:</strong> <a href="tel:+919828504050" style="color:#80DEEA">+91 98285 04050</a><br>
           <strong>Email:</strong> <a href="mailto:naveenorthokem@gmail.com" style="color:#80DEEA">naveenorthokem@gmail.com</a>
@@ -1052,7 +1074,7 @@
 <!-- Floating Action Buttons -->
 <div class="float-cta">
   <a href="https://wa.me/918290688810?text=Hello%20AOSIH%20Hospital,%20I%20want%20to%20consult%20Dr.%20Naveen%20Sharma" target="_blank" rel="noopener" class="float-btn fw2" aria-label="Chat on WhatsApp">
-    <img src="images/whatsapp.png" alt="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" onerror="this.onerror=null;this.style.display='none';">
   </a>
   <a href="tel:+918290688810" class="float-btn fc3" aria-label="Call Hospital">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.22 4 2 2 0 012.18 2h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.72 6.72l1.49-1.49a2 2 0 012.11-.45 12 12 0 002.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1069,7 +1091,7 @@ if (hbtn && mmenu) {
     const o = hbtn.classList.toggle('open');
     mmenu.classList.toggle('open', o);
     hbtn.setAttribute('aria-expanded', String(o));
-    document.body.style.overflow = o ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', o);
   });
 }
 function cm() {
@@ -1077,9 +1099,14 @@ function cm() {
     hbtn.classList.remove('open');
     mmenu.classList.remove('open');
     hbtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 }
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1080 && typeof cm === 'function') {
+    cm();
+  }
+}, { passive: true });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { cm(); closeModal(); } });
 
 // Sticky Header Shadow

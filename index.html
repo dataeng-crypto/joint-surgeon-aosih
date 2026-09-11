@@ -52,8 +52,8 @@
     {
       "@type": [
         "Hospital",
-        "MedicalBusiness",
         "MedicalClinic",
+        "MedicalBusiness",
         "EmergencyService"
       ],
       "@id": "https://www.jointsspecialist.com/#hospital",
@@ -67,7 +67,7 @@
       "url": "https://www.jointsspecialist.com/",
       "logo": "https://www.jointsspecialist.com/images/aosih_logo.svg",
       "image": "https://www.jointsspecialist.com/images/gallery_img_7762.webp",
-      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma.",
+      "description": "Advance Orthopedic & Sports Injury Hospital (AOSIH) at Sodala Metro Pillar 95, New Sanganer Road, Jaipur is Rajasthan's premier center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Replacement, and 4K Keyhole Arthroscopy directed by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) with over 20,000+ completed surgeries, 3,340+ verified reviews (4.9 rating), and OPD consultation timings 11:00 AM - 7:00 PM Mon-Sat.",
       "telephone": [
         "+91-8290688810",
         "+91-8209830287",
@@ -150,44 +150,128 @@
         "worstRating": "1"
       },
       "founder": {
-        "@type": "Physician",
-        "@id": "https://www.jointsspecialist.com/#physician",
-        "name": "Dr. Naveen Sharma",
-        "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
-        "gender": "Male",
-        "medicalSpecialty": [
-          "Orthopedic",
-          "Arthroplasty",
-          "SportsMedicine"
-        ],
-        "alumniOf": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "Seth GS Medical College and KEM Hospital Mumbai"
+        "@id": "https://www.jointsspecialist.com/#physician"
+      },
+      "medicalDirector": {
+        "@id": "https://www.jointsspecialist.com/#physician"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "@id": "https://www.jointsspecialist.com/testimonials.html#review-1",
+          "itemReviewed": {
+            "@id": "https://www.jointsspecialist.com/#hospital"
           },
-          {
-            "@type": "EducationalOrganization",
-            "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
-          }
-        ],
-        "memberOf": [
-          {
-            "@type": "Organization",
-            "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
+          "author": {
+            "@type": "Person",
+            "name": "Ramesh Kumar Sharma"
           },
-          {
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "I had severe grade 4 osteoarthritis in both knees and was confined to a wheelchair for 18 months. Dr. Naveen Sharma performed bilateral Subvastus total knee replacement at AOSIH Jaipur. Because no quadriceps muscles were cut, I stood and walked to the bathroom with walker assistance on the very same evening. By day 12, I discarded the walker completely. Six months post-op, I can climb stairs effortlessly and walk 3 km daily pain-free.",
+          "publisher": {
             "@type": "Organization",
-            "name": "Indian Orthopaedic Association (IOA)"
+            "name": "Google Verified Reviews"
           }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/drnaveensharmaortho/",
-          "https://x.com/drnaveensharma",
-          "https://www.instagram.com/naveenorthokem/",
-          "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
-          "https://share.google/rpxaZpfzqdNRAALzp"
-        ]
-      }
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.jointsspecialist.com/testimonials.html#review-2",
+          "itemReviewed": {
+            "@id": "https://www.jointsspecialist.com/#hospital"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Priya Gupta"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "My father was terrified of conventional hip replacement because of dislocation precautions and long recovery times. When we consulted Dr. Naveen Sharma at AOSIH Sodala for Direct Anterior Approach (DAA) hip replacement, he explained how the muscles remain completely untouched. The surgery was flawless—father walked down the hospital corridor just 4 hours after returning from the OT! No low-chair or leg-crossing restrictions.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google Verified Reviews"
+          }
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.jointsspecialist.com/testimonials.html#review-3",
+          "itemReviewed": {
+            "@id": "https://www.jointsspecialist.com/#hospital"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Amit Singhania"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "During a weekend cricket match, my knee twisted and popped—complete ACL rupture and complex bucket-handle meniscus tear. As a semi-professional cricketer, I feared my playing career was over. Dr. Naveen performed anatomical ACL reconstruction using Peroneus longus autograft with 4K arthroscopy and repaired the meniscus. His sports rehabilitation protocol was phenomenal. Exactly 8 months later, I passed all return-to-sport agility tests.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google Verified Reviews"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.jointsspecialist.com/#physician",
+      "name": "Dr. Naveen Sharma",
+      "jobTitle": "Director & Chief Joint Replacement and Sports Surgeon",
+      "gender": "Male",
+      "url": "https://www.jointsspecialist.com/about.html",
+      "image": "https://www.jointsspecialist.com/images/dr_naveen_sharma.webp",
+      "telephone": "+91-8290688810",
+      "description": "Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow) is the Director and Chief Joint Surgeon at Advance Orthopedic & Sports Injury Hospital (AOSIH) in Sodala, Jaipur with over 20,000+ completed surgeries and 4.9 rating across 3,340+ reviews.",
+      "worksFor": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "hospitalAffiliation": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "medicalSpecialty": [
+        "Orthopedic",
+        "Arthroplasty",
+        "SportsMedicine"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Seth GS Medical College and KEM Hospital Mumbai"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "All India Institute of Medical Sciences (AIIMS) New Delhi"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "International Society of Arthroscopy, Knee Surgery and Orthopaedic Sports Medicine (ISAKOS)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Indian Orthopaedic Association (IOA)"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/drnaveensharmaortho/",
+        "https://x.com/drnaveensharma",
+        "https://www.instagram.com/naveenorthokem/",
+        "https://www.youtube.com/channel/UC6lpikyd1sIrbSH_g74INrw",
+        "https://share.google/rpxaZpfzqdNRAALzp"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -206,7 +290,109 @@
         }
       ]
     },
-        {
+    {
+      "@type": "MedicalProcedure",
+      "@id": "https://www.jointsspecialist.com/knee-arthroscopy.html#subvastus",
+      "name": "Subvastus Total Knee Replacement",
+      "alternateName": "Fast-Track Subvastus TKR",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Knee Joint",
+      "description": "Quadriceps-sparing total knee arthroplasty entering beneath the vastus medialis muscle with zero incision through the extensor tendon mechanism, enabling unassisted walking within hours.",
+      "performer": {
+        "@id": "https://www.jointsspecialist.com/#physician"
+      }
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "https://www.jointsspecialist.com/hip-replacement.html#daa",
+      "name": "Direct Anterior Approach Hip Replacement",
+      "alternateName": "Muscle-Sparing DAA Hip Arthroplasty",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Hip Joint",
+      "description": "Direct Anterior Approach total hip arthroplasty performed through natural inter-muscular intervals without detaching gluteal tendons or piriformis, offering accelerated recovery and virtually zero dislocation risk.",
+      "performer": {
+        "@id": "https://www.jointsspecialist.com/#physician"
+      }
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "https://www.jointsspecialist.com/shoulder-surgery.html#rotator-cuff",
+      "name": "Arthroscopic Double-Row Rotator Cuff Repair",
+      "alternateName": "SutureBridge Rotator Cuff Repair",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Shoulder Joint / Rotator Cuff",
+      "description": "4K keyhole arthroscopic anatomic footprint reconstruction using high-strength PEEK suture anchors in a knotless double-row transosseous-equivalent configuration.",
+      "performer": {
+        "@id": "https://www.jointsspecialist.com/#physician"
+      }
+    },
+    {
+      "@type": "Review",
+      "@id": "https://www.jointsspecialist.com/testimonials.html#review-1",
+      "itemReviewed": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Ramesh Kumar Sharma"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "I had severe grade 4 osteoarthritis in both knees and was confined to a wheelchair for 18 months. Dr. Naveen Sharma performed bilateral Subvastus total knee replacement at AOSIH Jaipur. Because no quadriceps muscles were cut, I stood and walked to the bathroom with walker assistance on the very same evening. By day 12, I discarded the walker completely. Six months post-op, I can climb stairs effortlessly and walk 3 km daily pain-free.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google Verified Reviews"
+      }
+    },
+    {
+      "@type": "Review",
+      "@id": "https://www.jointsspecialist.com/testimonials.html#review-2",
+      "itemReviewed": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Priya Gupta"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "My father was terrified of conventional hip replacement because of dislocation precautions and long recovery times. When we consulted Dr. Naveen Sharma at AOSIH Sodala for Direct Anterior Approach (DAA) hip replacement, he explained how the muscles remain completely untouched. The surgery was flawless—father walked down the hospital corridor just 4 hours after returning from the OT! No low-chair or leg-crossing restrictions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google Verified Reviews"
+      }
+    },
+    {
+      "@type": "Review",
+      "@id": "https://www.jointsspecialist.com/testimonials.html#review-3",
+      "itemReviewed": {
+        "@id": "https://www.jointsspecialist.com/#hospital"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Amit Singhania"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "During a weekend cricket match, my knee twisted and popped—complete ACL rupture and complex bucket-handle meniscus tear. As a semi-professional cricketer, I feared my playing career was over. Dr. Naveen performed anatomical ACL reconstruction using Peroneus longus autograft with 4K arthroscopy and repaired the meniscus. His sports rehabilitation protocol was phenomenal. Exactly 8 months later, I passed all return-to-sport agility tests.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google Verified Reviews"
+      }
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -214,7 +400,7 @@
           "name": "Where is Advance Orthopedic & Sports Injury Hospital (AOSIH) located in Jaipur?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AOSIH is located at E-7, Hanuman Path, Near Metro Pillar 95, New Sanganer Road, Sodala, Jaipur. It is 1 minute walk from Pillar 95 Metro Station, 10 minutes from Jaipur Junction Railway Station, and 20 minutes from Jaipur International Airport."
+            "text": "AOSIH is conveniently located at E-7, Hanuman Path, Near Metro Pillar 95, New Sanganer Road, Sodala, Jaipur — 302019 . It is right adjacent to the Jaipur Metro line, making it easily accessible from Jaipur Railway Station (10 mins) and Jaipur Airport (20 mins)."
           }
         },
         {
@@ -222,7 +408,7 @@
           "name": "How is Direct Anterior Approach (DAA) Hip Replacement different from conventional surgery?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In DAA Hip Replacement at AOSIH, Dr. Naveen Sharma accesses the hip joint through the natural inter-muscular plane from the front, without detaching or cutting any hip muscles or tendons. This results in minimal blood loss, practically zero dislocation risk, no post-op sitting or sleeping restrictions, and same-day unassisted walking."
+            "text": "In conventional posterior hip surgery, major gluteal muscles and tendons must be cut to reach the hip socket, requiring weeks of healing and strict dislocation precautions. In DAA, Dr. Naveen Sharma accesses the hip through a natural intermuscular plane without cutting any muscle. Patients walk within 4 hours post-op, experience significantly less pain, and face virtually zero dislocation restrictions."
           }
         },
         {
@@ -346,7 +532,7 @@
     }
 
     /* Hero Visual Card */
-    .hero-visual-card {
+    .hero-visual-card, .hero-visual, .hero-card {
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -833,7 +1019,16 @@
 
     @media (max-width: 1180px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual-card { display: none; }
+      .hero-visual-card, .hero-visual, .hero-card {
+        display: flex;
+        justify-content: center;
+        max-width: 420px;
+        width: 100%;
+        margin: 28px auto 0;
+      }
+      .hero-doc-img-wrap img {
+        max-height: 380px;
+      }
       .treatments-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-showcase-grid { grid-template-columns: repeat(2, 1fr); }
       .surgeon-feature-grid { grid-template-columns: 1fr; }
@@ -843,6 +1038,24 @@
       .insurance-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
+      .hero-visual-card, .hero-visual, .hero-card {
+        width: 100%;
+        max-width: 360px;
+      }
+      .hero-float-pill {
+        padding: 10px 14px;
+      }
+      .hero-float-pill.top-right {
+        top: 10px;
+        right: 0;
+      }
+      .hero-float-pill.bottom-left {
+        bottom: 12px;
+        left: 0;
+      }
+      .hero-doc-img-wrap img {
+        max-height: 320px;
+      }
       .treatments-grid { grid-template-columns: 1fr; }
       .infra-showcase-grid { grid-template-columns: 1fr; }
       .awards-carousel-grid { grid-template-columns: repeat(2, 1fr); }
@@ -969,7 +1182,7 @@
 <div class="mm" id="mmenu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
     <div style="font-weight:800;font-size:16px;color:var(--navy)">AOSIH Navigation</div>
-    <button onclick="cm()" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
+    <button onclick="cm()" aria-label="Close Navigation Menu" style="background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer">&times;</button>
   </div>
   <a href="index.html" class="mnl" onclick="cm()">Home</a>
   
@@ -978,12 +1191,14 @@
     <a href="about.html" onclick="cm()">Hospital Leadership</a>
     <a href="about.html#infrastructure" onclick="cm()">Modular OTs &amp; Technology</a>
     <a href="about.html#team" onclick="cm()">Clinical Care Team</a>
+    <a href="about.html#safety" onclick="cm()">Patient Safety Standards</a>
   </div>
   
   <div class="mnl">Knee Surgery</div>
   <div class="ms">
     <a href="knee-arthroscopy.html" onclick="cm()">Total Knee Replacement</a>
     <a href="knee-arthroscopy.html#subvastus" onclick="cm()">Subvastus Muscle-Sparing TKR</a>
+    <a href="knee-arthroscopy.html#arthroscopy" onclick="cm()">Keyhole Arthroscopy</a>
     <a href="knee-arthroscopy.html#acl" onclick="cm()">ACL Ligament Reconstruction</a>
     <a href="knee-arthroscopy.html#meniscus" onclick="cm()">Meniscus Repair</a>
   </div>
@@ -993,12 +1208,15 @@
     <a href="hip-replacement.html" onclick="cm()">DAA Hip Replacement</a>
     <a href="hip-replacement.html#avn" onclick="cm()">AVN Hip Treatment</a>
     <a href="hip-replacement.html#thr" onclick="cm()">Total Hip Replacement</a>
+    <a href="hip-replacement.html#recovery" onclick="cm()">Rapid Recovery Protocol</a>
   </div>
   
   <div class="mnl">Shoulder Surgery</div>
   <div class="ms">
     <a href="shoulder-surgery.html" onclick="cm()">Rotator Cuff Repair</a>
-    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart &amp; Latarjet</a>
+    <a href="shoulder-surgery.html#bankart" onclick="cm()">Bankart Labral Repair</a>
+    <a href="shoulder-surgery.html#latarjet" onclick="cm()">Latarjet Bone Transfer</a>
+    <a href="shoulder-surgery.html#frozen" onclick="cm()">Frozen Shoulder Hydrodilatation</a>
   </div>
   
   <a href="testimonials.html" class="mnl" onclick="cm()">Patient Recovery Stories</a>
@@ -1058,7 +1276,7 @@
         </div>
       </div>
       
-      <div class="hero-visual-card">
+      <div class="hero-visual-card hero-visual hero-card">
         <div class="hero-doc-img-wrap">
           <img src="images/doctor_full_image.png" alt="Dr. Naveen Sharma Senior Joint Surgeon" onerror="this.onerror=null;this.src='images/doc_hero_cutout.png';">
         </div>
@@ -1099,20 +1317,20 @@
       <div class="trust-title">Verified Hospital Ratings &amp; Accreditations</div>
       <div class="trust-badges-list">
         <a href="https://share.google/rpxaZpfzqdNRAALzp" target="_blank" rel="noopener" class="trust-badge-pill" title="View Verified Google Listing">
-          <img src="images/review_google.jpeg" alt="Google Reviews">
-          <span class="trust-badge-val">4.9 ★ (3,340+ Google Reviews)</span>
+          <img src="images/review_google.jpeg" alt="Google Reviews" onerror="this.onerror=null;this.src='images/press_1.jpg';">
+          <span class="trust-badge-val"><span class="counter-val" data-counter="4.9" data-decimals="1">4.9</span> ★ (<span class="counter-val" data-counter="3340" data-suffix="+">3,340+</span> Google Reviews)</span>
         </a>
         <div class="trust-badge-pill">
-          <img src="images/review_practo.png" alt="Practo Verified">
-          <span class="trust-badge-val">99% Patient Recommendation</span>
+          <img src="images/review_practo.png" alt="Practo Verified" onerror="this.onerror=null;this.src='images/press_1.jpg';">
+          <span class="trust-badge-val"><span class="counter-val" data-counter="99" data-suffix="%">99%</span> Patient Recommendation</span>
         </div>
         <div class="trust-badge-pill">
-          <img src="images/review_lybrate.png" alt="Lybrate Top Doctor">
+          <img src="images/review_lybrate.png" alt="Lybrate Top Doctor" onerror="this.onerror=null;this.src='images/press_1.jpg';">
           <span class="trust-badge-val">Top Orthopedic Hospital</span>
         </div>
         <div class="trust-badge-pill">
-          <img src="images/review_justdial.png" alt="JustDial Verified">
-          <span class="trust-badge-val">4.9 ★ JustDial Verified</span>
+          <img src="images/review_justdial.png" alt="JustDial Verified" onerror="this.onerror=null;this.src='images/press_1.jpg';">
+          <span class="trust-badge-val"><span class="counter-val" data-counter="4.9" data-decimals="1">4.9</span> ★ JustDial Verified</span>
         </div>
       </div>
     </div>
@@ -1168,7 +1386,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Arthroplasty</span>
-          <img src="images/knee_replacement_graphic.png" alt="Total Knee Replacement Jaipur">
+          <img src="images/knee_replacement_graphic.png" alt="Total Knee Replacement Jaipur" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">Fast-Track Knee Replacement (TKR)</h3>
@@ -1193,7 +1411,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Revolutionary Hip Care</span>
-          <img src="images/hip_replacement_graphic.png" alt="DAA Direct Anterior Hip Replacement">
+          <img src="images/hip_replacement_graphic.png" alt="DAA Direct Anterior Hip Replacement" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">Direct Anterior Approach (DAA) Hip</h3>
@@ -1218,7 +1436,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Sports Medicine</span>
-          <img src="images/acl_surgery_graphic.png" alt="ACL Ligament Reconstruction Jaipur">
+          <img src="images/acl_surgery_graphic.png" alt="ACL Ligament Reconstruction Jaipur" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">Knee Arthroscopy &amp; ACL Reconstruction</h3>
@@ -1243,7 +1461,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Upper Limb</span>
-          <img src="images/shoulder_dislocation.jpg" alt="Rotator Cuff and Bankart Surgery">
+          <img src="images/shoulder_dislocation.jpg" alt="Rotator Cuff and Bankart Surgery" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">Shoulder Arthroscopy &amp; Instability</h3>
@@ -1268,7 +1486,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Joint Preservation</span>
-          <img src="images/avn_hip_case.jpg" alt="AVN Hip Treatment and Core Decompression">
+          <img src="images/avn_hip_case.jpg" alt="AVN Hip Treatment and Core Decompression" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">AVN Hip Preservation &amp; Replacement</h3>
@@ -1293,7 +1511,7 @@
       <div class="treatment-card">
         <div class="treatment-thumb">
           <span class="treatment-cat-pill">Rehabilitation</span>
-          <img src="images/gallery_img_5501.webp" alt="Physiotherapy and Gait Rehabilitation Center">
+          <img src="images/gallery_img_5501.webp" alt="Physiotherapy and Gait Rehabilitation Center" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="treatment-body">
           <h3 class="treatment-title">Orthopedic Rehabilitation &amp; Gait Lab</h3>
@@ -1348,7 +1566,7 @@
       <div class="proc-stage-grid">
         <!-- Anatomical Visual Canvas with Hotspots -->
         <div class="proc-anatomy-canvas-box">
-          <img src="images/knee_replacement_graphic.png" alt="Surgical Anatomy Procedure Visualizer">
+          <img src="images/knee_replacement_graphic.png" alt="Surgical Anatomy Procedure Visualizer" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
           <div class="proc-hotspots-container">
             <!-- Dynamic Hotspots generated by JS -->
           </div>
@@ -1398,7 +1616,7 @@
     <div class="infra-showcase-grid">
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_3916.webp" alt="Modular Laminar Airflow Operation Theatre">
+          <img src="images/gallery_img_3916.webp" alt="Modular Laminar Airflow Operation Theatre" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">Class 100 Modular OT Suite</h3>
@@ -1410,7 +1628,7 @@
       
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_4436.webp" alt="4K High-Definition Arthroscopy Towers">
+          <img src="images/gallery_img_4436.webp" alt="4K High-Definition Arthroscopy Towers" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">4K High-Definition Arthroscopy Towers</h3>
@@ -1422,7 +1640,7 @@
       
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_4607.webp" alt="High-Resolution Digital MRI and X-Ray">
+          <img src="images/gallery_img_4607.webp" alt="High-Resolution Digital MRI and X-Ray" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">Digital Imaging &amp; Diagnostics</h3>
@@ -1434,7 +1652,7 @@
       
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_9009.webp" alt="Surgical Precision and Sterile Scrub Suites">
+          <img src="images/gallery_img_9009.webp" alt="Surgical Precision and Sterile Scrub Suites" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">Sterile Surgical Prep &amp; Anesthesia</h3>
@@ -1446,7 +1664,7 @@
       
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_4038.webp" alt="Deluxe Inpatient Patient Recovery Suites">
+          <img src="images/gallery_img_4038.webp" alt="Deluxe Inpatient Patient Recovery Suites" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">Deluxe Inpatient Recovery Rooms</h3>
@@ -1458,7 +1676,7 @@
       
       <div class="infra-card">
         <div class="infra-img-box">
-          <img src="images/gallery_img_4310.webp" alt="Hospital Reception and Coordination Desk">
+          <img src="images/gallery_img_4310.webp" alt="Hospital Reception and Coordination Desk" onerror="this.onerror=null;this.src='images/modern_ot_suite.jpg';">
         </div>
         <div class="infra-info">
           <h3 class="infra-title">Cashless Mediclaim Coordination</h3>
@@ -1504,14 +1722,14 @@
         <!-- Authored Books -->
         <div class="books-row">
           <div class="book-card">
-            <img src="images/knee_book_cover.jpeg" alt="Complete Guide to Knee Replacement">
+            <img src="images/knee_book_cover.jpeg" alt="Complete Guide to Knee Replacement" onerror="this.onerror=null;this.src='images/press_1.jpg';">
             <div>
               <h4>Complete Guide to Knee Replacement</h4>
               <p>Authored by Dr. Naveen Sharma on fast-track recovery and subvastus muscle preservation.</p>
             </div>
           </div>
           <div class="book-card">
-            <img src="images/hip_book_cover.jpeg" alt="Complete Guide to Hip Replacement">
+            <img src="images/hip_book_cover.jpeg" alt="Complete Guide to Hip Replacement" onerror="this.onerror=null;this.src='images/press_1.jpg';">
             <div>
               <h4>DAA Hip Replacement Protocol</h4>
               <p>Comprehensive clinical monograph on the Direct Anterior Approach and AVN management.</p>
@@ -1533,7 +1751,7 @@
       <div class="awards-carousel-grid">
         <div class="award-item-box">
           <div class="award-thumb-h">
-            <img src="images/award_isakos.jpg" alt="ISAKOS International Society Fellow">
+            <img src="images/award_isakos.jpg" alt="ISAKOS International Society Fellow" onerror="this.onerror=null;this.src='images/press_1.jpg';">
           </div>
           <div class="award-info-h">
             <div class="award-title-h">ISAKOS International Fellow, Germany</div>
@@ -1565,7 +1783,7 @@
         </div>
         <div class="award-item-box">
           <div class="award-thumb-h">
-            <img src="images/award_4.jpg" alt="Surgical Achievement Award">
+            <img src="images/award_4.jpg" alt="Surgical Achievement Award" onerror="this.onerror=null;this.src='images/press_1.jpg';">
           </div>
           <div class="award-info-h">
             <div class="award-title-h">Distinguished Surgical Achievement</div>
@@ -1622,7 +1840,7 @@
       <div class="testi-card">
         <div class="testi-header">
           <div class="testi-avatar">
-            <img src="images/patient_knee_ramesh.jpg" alt="Ramesh Kumar Sharma">
+            <img src="images/patient_knee_ramesh.jpg" alt="Ramesh Kumar Sharma" onerror="this.onerror=null;this.src='images/rapid_recovery_walking.jpg';">
           </div>
           <div>
             <div class="testi-name">Ramesh Kumar Sharma</div>
@@ -1643,7 +1861,7 @@
       <div class="testi-card">
         <div class="testi-header">
           <div class="testi-avatar">
-            <img src="images/patient_hip_priya.jpg" alt="Priya Gupta Father">
+            <img src="images/patient_hip_priya.jpg" alt="Priya Gupta Father" onerror="this.onerror=null;this.src='images/rapid_recovery_walking.jpg';">
           </div>
           <div>
             <div class="testi-name">Priya Gupta (for Father)</div>
@@ -1664,7 +1882,7 @@
       <div class="testi-card">
         <div class="testi-header">
           <div class="testi-avatar">
-            <img src="images/patient_acl_amit.jpg" alt="Amit Singhania ACL">
+            <img src="images/patient_acl_amit.jpg" alt="Amit Singhania ACL" onerror="this.onerror=null;this.src='images/rapid_recovery_walking.jpg';">
           </div>
           <div>
             <div class="testi-name">Amit Singhania</div>
@@ -1719,13 +1937,13 @@
     <div class="ba-slider-container" style="--split-pos: 50%;">
       <!-- Layer 1: Before (Bottom) -->
       <div class="ba-layer ba-before">
-        <img src="images/knee_clinical_photo.jpg" alt="Pre-Operative Joint Alignment">
+        <img src="images/knee_clinical_photo.jpg" alt="Pre-Operative Joint Alignment" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         <span class="ba-badge ba-badge-before">Pre-Op: Grade 4 Varus Bowing</span>
       </div>
 
       <!-- Layer 2: After (Top Clip) -->
       <div class="ba-layer ba-after">
-        <img src="images/knee_replacement_graphic.png" alt="Post-Operative Joint Alignment">
+        <img src="images/knee_replacement_graphic.png" alt="Post-Operative Joint Alignment" onerror="this.onerror=null;this.src='images/doctor_consultation.jpg';">
         <span class="ba-badge ba-badge-after">Post-Op: 0° Neutral Alignment (AOSIH)</span>
       </div>
 
@@ -1995,7 +2213,7 @@
           </div>
         </div>
         <p class="ftg">
-          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS).
+          Rajasthan's foremost specialized center for Direct Anterior Approach (DAA) Hip Replacement, Fast-Track Subvastus Knee Arthroplasty, and 4K Keyhole Arthroscopy led by Dr. Naveen Sharma (MS Ortho KEM Mumbai, Ex-AIIMS New Delhi, ISAKOS Germany Fellow). Over 20,000+ completed surgeries, 4.9★ rating with 3,340+ verified reviews.
         </p>
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,151,167,.2);border:1px solid rgba(0,151,167,.4);padding:6px 14px;border-radius:100px;font-size:11.5px;color:#80DEEA;font-weight:700;margin-bottom:20px">
           Class 100 Modular OT • Landmark Metro Pillar 95, Sodala, Jaipur
@@ -2044,7 +2262,8 @@
           E-7, Hanuman Path, Near Metro Pillar 95,<br>
           New Sanganer Road, Sodala,<br>
           Jaipur, Rajasthan &mdash; 302019<br><br>
-          <strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
+          <strong>OPD Timings:</strong> Mon&ndash;Sat 11:00 AM &ndash; 7:00 PM (Sun 11:00 AM &ndash; 3:00 PM)<br>
+          <strong>Emergency:</strong> 24/7 Joint Trauma Care<br><br><strong>24/7 Helpline:</strong> <a href="tel:+918290688810" style="color:#80DEEA">+91 82906 88810</a><br>
           <strong>Hospital Desk:</strong> <a href="tel:+918209830287" style="color:#80DEEA">+91 82098 30287</a><br>
           <strong>Patient Care:</strong> <a href="tel:+919828504050" style="color:#80DEEA">+91 98285 04050</a><br>
           <strong>Email:</strong> <a href="mailto:naveenorthokem@gmail.com" style="color:#80DEEA">naveenorthokem@gmail.com</a>
@@ -2137,7 +2356,7 @@
 <!-- Floating Action Buttons -->
 <div class="float-cta">
   <a href="https://wa.me/918290688810?text=Hello%20AOSIH%20Hospital,%20I%20want%20to%20consult%20Dr.%20Naveen%20Sharma" target="_blank" rel="noopener" class="float-btn fw2" aria-label="Chat on WhatsApp">
-    <img src="images/whatsapp.png" alt="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" onerror="this.onerror=null;this.style.display='none';">
   </a>
   <a href="tel:+918290688810" class="float-btn fc3" aria-label="Call Hospital">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.22 4 2 2 0 012.18 2h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.72 6.72l1.49-1.49a2 2 0 012.11-.45 12 12 0 002.81.7A2 2 0 0122 16.92z"/></svg>
@@ -2154,7 +2373,7 @@ if (hbtn && mmenu) {
     const o = hbtn.classList.toggle('open');
     mmenu.classList.toggle('open', o);
     hbtn.setAttribute('aria-expanded', String(o));
-    document.body.style.overflow = o ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', o);
   });
 }
 function cm() {
@@ -2162,9 +2381,14 @@ function cm() {
     hbtn.classList.remove('open');
     mmenu.classList.remove('open');
     hbtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 }
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1080 && typeof cm === 'function') {
+    cm();
+  }
+}, { passive: true });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { cm(); closeModal(); } });
 
 // Sticky Header Shadow

@@ -333,8 +333,10 @@ button, input, select, textarea {
   top: 0;
   z-index: 1000;
   background: #FFFFFF;
+  border-bottom: 1px solid transparent;
+  box-sizing: border-box;
   box-shadow: 0 2px 14px rgba(10, 37, 64, 0.07);
-  transition: box-shadow var(--tr);
+  transition: box-shadow var(--tr), border-color var(--tr), background var(--tr);
   width: 100%;
 }
 
@@ -429,7 +431,7 @@ button, input, select, textarea {
 
 .dd {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   background: #FFFFFF;
@@ -442,6 +444,16 @@ button, input, select, textarea {
   pointer-events: none;
   transition: var(--tr);
   z-index: 100;
+}
+
+.dd::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
 }
 
 .nit:hover .dd {
@@ -949,12 +961,17 @@ button, input, select, textarea {
     text-align: center;
   }
   .doc-profile-avatar-wrap {
-    height: 300px;
+    height: 310px;
     max-width: 280px;
     margin: 0 auto;
+    padding-top: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
   }
   .doc-profile-avatar-wrap img {
-    max-height: 295px;
+    max-height: 280px;
+    object-fit: contain;
   }
   .doc-creds-pills {
     justify-content: center;
@@ -1007,6 +1024,32 @@ button, input, select, textarea {
 .clinical-table .highlight {
   font-weight: 700;
   color: var(--teal);
+}
+
+@media (max-width: 768px) {
+  .clinical-table-wrapper {
+    margin: 20px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .clinical-table {
+    min-width: 500px;
+    font-size: 13.5px;
+  }
+  .clinical-table th,
+  .clinical-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clinical-table {
+    min-width: 460px;
+    font-size: 12.5px;
+  }
+  .clinical-table th,
+  .clinical-table td {
+    padding: 10px 10px;
+  }
 }
 
 /* Interactive FAQ Accordion */
@@ -1078,15 +1121,20 @@ button, input, select, textarea {
 }
 
 .faq-ans {
-  display: none;
-  padding: 0 24px 22px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.8;
+  opacity: 0;
+  transition: max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item-card.open .faq-ans {
-  display: block;
+  max-height: 600px;
+  padding-bottom: 22px;
+  opacity: 1;
 }
 
 /* Modal Overlay */
@@ -1391,21 +1439,24 @@ button, input, select, textarea {
    ============================================================================== */
 
 @media (max-width: 1200px) {
+  .container {
+    padding: 0 16px;
+  }
   .nli {
-    font-size: 11.5px;
-    padding: 4px 5px;
+    font-size: 11px;
+    padding: 4px 4px;
     gap: 2px;
   }
   .nlt .s {
     display: none;
   }
   .nlt .b {
-    font-size: 13px;
+    font-size: 12.5px;
     white-space: nowrap;
   }
   .nb {
-    padding: 7px 12px;
-    font-size: 12px;
+    padding: 6px 10px;
+    font-size: 11.5px;
   }
   .footer-grid {
     grid-template-columns: 280px repeat(3, 1fr);
@@ -1413,7 +1464,7 @@ button, input, select, textarea {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1050px) {
   .tb {
     display: none;
   }
@@ -1443,9 +1494,24 @@ button, input, select, textarea {
   .sh {
     font-size: clamp(24px, 5vw, 32px);
   }
+  .form-input, .form-select, .form-textarea {
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 640px) {
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 12px 20px;
+  }
+  .btn.lg {
+    white-space: normal !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
   .ni {
     height: 64px;
   }
@@ -1474,6 +1540,43 @@ button, input, select, textarea {
   .float-btn {
     width: 48px;
     height: 48px;
+  }
+}
+
+/* Tablet 3-Card Grid Balancing */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .knee-features-grid > *:nth-child(3):last-child,
+  .fellowship-highlights-grid > *:nth-child(3):last-child,
+  .hip-perks-grid > *:nth-child(3):last-child,
+  .shoulder-perks-grid > *:nth-child(3):last-child,
+  .press-grid > *:nth-child(3):last-child,
+  .news-media-grid > *:nth-child(3):last-child,
+  .insurance-grid > *:nth-child(3):last-child {
+    grid-column: span 2;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .knee-features-grid > *:nth-child(3):last-child,
+  .fellowship-highlights-grid > *:nth-child(3):last-child,
+  .hip-perks-grid > *:nth-child(3):last-child,
+  .shoulder-perks-grid > *:nth-child(3):last-child,
+  .press-grid > *:nth-child(3):last-child,
+  .news-media-grid > *:nth-child(3):last-child,
+  .insurance-grid > *:nth-child(3):last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 993px) {
+  .content-sidebar > aside {
+    position: sticky;
+    top: 96px;
+    align-self: start;
   }
 }
 
